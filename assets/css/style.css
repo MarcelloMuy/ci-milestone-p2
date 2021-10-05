@@ -1,0 +1,25 @@
+/* Global style */
+
+body {
+    width: 100%;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+/* start game area */
+
+.play-button-area {
+    text-align: center;
+}
+
+/* Game area */
+
+.board-area {
+    text-align: center;
+}
+
+
+
+
