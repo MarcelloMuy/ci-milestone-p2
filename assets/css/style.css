@@ -20,6 +20,10 @@ h1, h2, p {
     text-align: center;
 }
 
+.board-button {
+    display: inline-block;
+}
+
 
 
 
