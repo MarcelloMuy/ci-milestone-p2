@@ -1,29 +1,68 @@
 /* Global style */
-
 body {
+    margin: 0;
     width: 100%;
-}
-
-h1, h2, p {
     text-align: center;
 }
 
-/* start game area */
+p {
+    font-family: 'Montserrat', 'sans serif';
+}
 
-.play-button-area {
-    text-align: center;
+h1 {
+    font-family: 'Press Start 2p', 'sans serif';
+    margin: 0;
+}
+
+.logo {
+    margin: 0.9em 0.9em 0 0.9em;
+}
+
+/* control area */
+.control-area {
+    margin-top: 0.8em;
+}
+.control-buttons {
+    border-radius: 0.2em;
+    padding: 0.45em 0.9em;
+    margin: 0.3em;
+    font-weight: 400;
+    font-family: 'Montserrat', 'sans serif';
+    font-size: 12px;
 }
 
 /* Game area */
-
 .board-area {
     text-align: center;
+    margin-top: 2em;
 }
 
 .board-button {
     display: inline-block;
+    width: 40%;
+    height: 25%;
+
+}
+
+#option1 {
+    background-color: yellow;
+    border-top-left-radius: 100%;
 }
 
 
+#option2 {
+    background-color: blue;
+    border-top-right-radius: 100%;
+}
+
+#option3 {
+    background-color: green;
+    border-bottom-left-radius: 100%;
+}
+
+#option4 {
+    background-color: red;
+    border-bottom-right-radius: 100%;
+}
 
 
