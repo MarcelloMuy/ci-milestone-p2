@@ -7,6 +7,7 @@ body {
 
 p {
     font-family: 'Montserrat', 'sans serif';
+    margin-top: 0.5em;
 }
 
 h1 {
@@ -20,7 +21,7 @@ h1 {
 
 /* control area */
 .control-area {
-    margin-top: 0.8em;
+    margin-top: 1em;
 }
 .control-buttons {
     border-radius: 0.2em;
@@ -34,14 +35,14 @@ h1 {
 /* Game area */
 .board-area {
     text-align: center;
-    margin-top: 2em;
+    margin-top: 1.8em;
+    background-color: black;
 }
 
 .board-button {
     display: inline-block;
-    width: 40%;
-    height: 25%;
-
+    width: 150px;
+    height: 150px;
 }
 
 #option1 {
