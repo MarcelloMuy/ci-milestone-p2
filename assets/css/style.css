@@ -52,6 +52,10 @@ h1 {
     height: 150px;
 }
 
+.board-button:hover {
+    border: 1px solid rgb(197, 222, 255);
+}
+
 #option1 {
     background-color: yellow;
     border-top-left-radius: 100%;
