@@ -7,7 +7,7 @@ body {
 
 p {
     font-family: 'Montserrat', 'sans serif';
-    margin-top: 0.5em;
+    margin: auto;
 }
 
 h1 {
@@ -32,11 +32,18 @@ h1 {
     font-size: 12px;
 }
 
+/* Rounds counter area */
+
+.round-area {
+    margin-top: 1.5em;
+}
+
 /* Game area */
 .board-area {
     text-align: center;
-    margin-top: 1.8em;
     background-color: black;
+    margin-top: 0.3em;
+    padding: 0.5em 0.2em;
 }
 
 .board-button {
