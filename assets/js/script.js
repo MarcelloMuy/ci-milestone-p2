@@ -103,6 +103,10 @@ function reloadPage() {
     window.location.reload();
 }
 
+function runGame() {
+    playAiSequence();
+}
+
 /**
  * Can be called in other functions in order to set a time to wait
  * before executing next line of code
