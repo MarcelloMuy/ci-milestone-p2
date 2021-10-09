@@ -1,5 +1,4 @@
 
-
 /**
  * Creates a new paragraph with the instructions and a button to reload the page
  */
@@ -103,3 +102,39 @@ function formSubmit() {
 function reloadPage() {
     window.location.reload();
 }
+
+/**
+ * Can be called in other functions in order to set a time to wait
+ * before executing next line of code
+ */
+ function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve,milliseconds));
+ }
+
+/**
+ * Loops through the colours array and flash the sequence
+ */ 
+async function playAiSequence() {
+    for (let i = 0; i < aiSequence.length; i++) {
+        await sleep(700);
+        let flashing = document.getElementById('option' + aiSequence[i]);
+        console.log(flashing);
+        if (flashing.id == 'option1') {
+            flashing.style.backgroundColor = 'white'
+            await sleep(700);
+            flashing.style.backgroundColor = 'yellow'
+        } else if (flashing.id == 'option2') {
+            flashing.style.backgroundColor = 'white'
+            await sleep(700);
+            flashing.style.backgroundColor = 'blue'
+        } else if (flashing.id == 'option3') {
+            flashing.style.backgroundColor = 'white'
+            await sleep(700);
+            flashing.style.backgroundColor = 'green'
+        }else if (flashing.id == 'option4') {
+            flashing.style.backgroundColor = 'white'
+            await sleep(700);
+            flashing.style.backgroundColor = 'red'
+        }
+    }
+ }
