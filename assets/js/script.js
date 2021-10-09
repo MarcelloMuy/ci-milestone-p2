@@ -6,7 +6,7 @@
 function runInstructions() {
     let newP = document.createElement('p');
     newP.innerHTML = "This is the Instruction...";
-    let instructionsDiv = document.getElementById('instructionsDiv');
+    let instructionsDiv = document.getElementById('instructions-div');
     instructionsDiv.appendChild(newP);
     let button = document.getElementById('instructions'); 
     button.remove();
@@ -24,7 +24,7 @@ function runInstructions() {
  */
 function runFeedback() {
     let newForm = document.createElement('form');
-    newForm.setAttribute('id', 'feedbackForm');
+    newForm.setAttribute('id', 'feedback-form');
     newForm.setAttribute('method', 'POST')
     newForm.setAttribute('action', 'https://formdump.codeinstitute.net/');
     newForm.addEventListener('submit', handleSubmit);
@@ -48,7 +48,7 @@ function runFeedback() {
         <label for="feedback"></label>
         <textarea id="feedback" name="feedback" placeholder="Your feedback..." rows="10" cols="38" aria-label="Enter text here"></textarea>
     </div>` 
-    let feedbackDiv = document.getElementById('feedbackDiv');
+    let feedbackDiv = document.getElementById('feedback-div');
     feedbackDiv.appendChild(newForm);
 
     let button = document.getElementById('feedback'); 
@@ -56,11 +56,11 @@ function runFeedback() {
     let submitButton = document.createElement('button');
     submitButton.innerHTML = "Submit";
     submitButton.setAttribute('type', 'submit');
-    feedbackForm.appendChild(submitButton);
-    let closeInstructions = document.createElement('button');
-    closeInstructions.innerHTML = "X";
-    feedbackForm.appendChild(closeInstructions);
-    closeInstructions.setAttribute('onclick', 'reloadPage()');
+    newForm.appendChild(submitButton);
+    let closeFeedback = document.createElement('button');
+    closeFeedback.innerHTML = "X";
+    newForm.appendChild(closeFeedback);
+    closeFeedback.setAttribute('onclick', 'reloadPage()');
 }
 
 /**
@@ -72,7 +72,7 @@ function runFeedback() {
 function handleSubmit(event) {
     event.preventDefault();
     
-    let newForm = document.getElementById('feedbackForm');
+    let newForm = document.getElementById('feedback-form');
     
     let fname = newForm.elements['fname'].value;
     let lname = newForm.elements['lname'].value;
@@ -84,7 +84,7 @@ function handleSubmit(event) {
     closeFeedbackPopup.innerHTML = "X";
     closeFeedbackPopup.setAttribute('onclick', 'formSubmit()')
     feedbackPopup.appendChild(closeFeedbackPopup);
-    let fullForm = document.getElementById('feedbackDiv');
+    let fullForm = document.getElementById('feedback-div');
     fullForm.style.display = "none";
 }
 
@@ -93,7 +93,7 @@ function handleSubmit(event) {
  * Will be called when the user close the feedback Popup
  */
 function formSubmit() {
-    let newForm = document.getElementById('feedbackForm');
+    let newForm = document.getElementById('feedback-form');
     newForm.submit();
 }
 
