@@ -24,7 +24,9 @@ function runInstructions() {
  */
 function runFeedback() {
     let newForm = document.createElement('form');
-    newForm.setAttribute('method', 'post')
+    newForm.setAttribute('id', 'feedbackForm');
+    newForm.setAttribute('method', 'POST')
+    newForm.setAttribute('action', 'https://formdump.codeinstitute.net/');
     newForm.innerHTML = `
     <div>
         <h2 aria-label="Form Heading">Give Your Feedback</h2>
@@ -52,10 +54,11 @@ function runFeedback() {
     button.remove();
     let submitButton = document.createElement('button');
     submitButton.innerHTML = "Submit";
-    feedbackDiv.appendChild(submitButton);
+    submitButton.setAttribute('type', 'submit');
+    feedbackForm.appendChild(submitButton);
     let closeInstructions = document.createElement('button');
     closeInstructions.innerHTML = "X";
-    feedbackDiv.appendChild(closeInstructions);
+    feedbackForm.appendChild(closeInstructions);
     closeInstructions.setAttribute('onclick', 'reloadPage()');
 }
 
