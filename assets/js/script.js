@@ -1,3 +1,4 @@
+let aiSequence = [];
 
 /**
  * Creates a new paragraph with the instructions and a button to reload the page
