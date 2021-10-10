@@ -1,3 +1,6 @@
+/**
+ * Array of colours
+ */
 let aiSequence = [];
 
 /**
@@ -107,6 +110,14 @@ function reloadPage() {
 function runGame() {
     playAiSequence();
 }
+
+/**
+ * Generates a random number between 1 and 4
+ */
+function newColour() {
+    let colour = Math.floor(Math.random() * 4 + 1);
+    console.log(colour);
+  }
 
 /**
  * Can be called in other functions in order to set a time to wait
