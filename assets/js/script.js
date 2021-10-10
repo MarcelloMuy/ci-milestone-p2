@@ -108,7 +108,44 @@ function reloadPage() {
 }
 
 function runGame() {
+    newColour();
     playAiSequence();
+    giveAlisteners();
+    
+}
+
+/**
+ * Loop through the board game and add a listener to each button
+ */
+function giveAlisteners() {
+    let allButtons = document.getElementsByClassName('board-button');
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].addEventListener('click', userRound);
+    }    
+}
+
+
+/**
+ * listens to the buttons being clicked...
+ */
+async function userRound(event) {
+    if (this.id == 'option1') {
+        this.style.backgroundColor = 'white'
+        await sleep(700);
+        this.style.backgroundColor = 'yellow'
+    } else if (this.id == 'option2') {
+        this.style.backgroundColor = 'white'
+        await sleep(700);
+        this.style.backgroundColor = 'blue'
+    } else if (this.id == 'option3') {
+        this.style.backgroundColor = 'white'
+        await sleep(700);
+        this.style.backgroundColor = 'green'
+    }else if (this.id == 'option4') {
+        this.style.backgroundColor = 'white'
+        await sleep(700);
+        this.style.backgroundColor = 'red'
+    }
 }
 
 /**
