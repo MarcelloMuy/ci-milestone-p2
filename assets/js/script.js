@@ -3,6 +3,8 @@
  */
 let aiSequence = [];
 
+let userSequence = [];
+
 /**
  * Creates a new paragraph with the instructions and a button to reload the page
  */
@@ -110,14 +112,13 @@ function reloadPage() {
 function runGame() {
     newColour();
     playAiSequence();
-    giveAlisteners();
-    
+    giveAlistener();
 }
 
 /**
  * Loop through the board game and add a listener to each button
  */
-function giveAlisteners() {
+function giveAlistener() {
     let allButtons = document.getElementsByClassName('board-button');
     for (let i = 0; i < allButtons.length; i++) {
         allButtons[i].addEventListener('click', userRound);
@@ -130,18 +131,22 @@ function giveAlisteners() {
  */
 async function userRound(event) {
     if (this.id == 'option1') {
+        userSequence.push(this.id);
         this.style.backgroundColor = 'white'
         await sleep(700);
         this.style.backgroundColor = 'yellow'
     } else if (this.id == 'option2') {
+        userSequence.push(this.id);
         this.style.backgroundColor = 'white'
         await sleep(700);
         this.style.backgroundColor = 'blue'
     } else if (this.id == 'option3') {
+        userSequence.push(this.id);
         this.style.backgroundColor = 'white'
         await sleep(700);
         this.style.backgroundColor = 'green'
     }else if (this.id == 'option4') {
+        userSequence.push(this.id);
         this.style.backgroundColor = 'white'
         await sleep(700);
         this.style.backgroundColor = 'red'
