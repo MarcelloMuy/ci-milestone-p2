@@ -1,9 +1,22 @@
 /**
- * Array of colours
+ * Array of colours (Computer)
  */
 let aiSequence = [];
 
+/**
+ * Array of colours (User)
+ */
 let userSequence = [];
+
+/**
+ * A way to check if the game has started 
+ */
+let started = false;
+
+/**
+ * Store rounds
+ */
+let round = "0";
 
 /**
  * Creates a new paragraph with the instructions and a button to reload the page
@@ -110,13 +123,20 @@ function reloadPage() {
 }
 
 function runGame() {
-    newColour();
-    playAiSequence();
+    if (!started) {
+        let newRound = document.getElementById('round');
+        newRound.innerHTML = round;
+        newColour();
+        playAiSequence();
+        started = true;
+    }
+    
+    
     giveAlistener();
 }
 
 /**
- * Loop through the board game and add a listener to each button
+ * Loops through the board game and add a listener to each button
  */
 function giveAlistener() {
     let allButtons = document.getElementsByClassName('board-button');
@@ -127,7 +147,7 @@ function giveAlistener() {
 
 
 /**
- * listens to the buttons being clicked...
+ * listens to the buttons being clicked, flashes and push buttons id to array.
  */
 async function userRound(event) {
     if (this.id == 'option1') {
@@ -158,7 +178,7 @@ async function userRound(event) {
  */
 function newColour() {
      let colour = Math.floor(Math.random() * 4 + 1);
-     aiSequence.push(colour);
+     aiSequence.push("option" + colour);
 }
 
 /**
@@ -173,9 +193,11 @@ function newColour() {
  * Loops through the colours array and flash the sequence
  */ 
 async function playAiSequence() {
+    round++;
+    document.getElementById('round').innerHTML = round;
     for (let i = 0; i < aiSequence.length; i++) {
         await sleep(700);
-        let flashing = document.getElementById('option' + aiSequence[i]);
+        let flashing = document.getElementById(aiSequence[i]);
         console.log(flashing);
         if (flashing.id == 'option1') {
             flashing.style.backgroundColor = 'white'
