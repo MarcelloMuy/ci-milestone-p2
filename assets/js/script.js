@@ -208,6 +208,7 @@ function newColour() {
 /**
  * Set user sequence array to empty
  * Set userRoundToClick to false
+ * Increase round by 1 and display it
  * Loops through the colours array and flashes the computer sequence
  * Set userRoundToClick to true after sequence is done and call function to give listeners to buttons
  */ 
@@ -215,7 +216,7 @@ async function playAiSequence() {
     userSequence = [];
     userRoundToClick = false;
     round++;
-    document.getElementById('round').innerHTML = round;
+    displayRound();
     newColour();
     for (let i = 0; i < aiSequence.length; i++) {
         await sleep(700);
@@ -242,7 +243,12 @@ async function playAiSequence() {
     userRoundToClick = true;
     giveAlistener();
  } 
-
+/**
+ * Display the round number
+ */
+function displayRound() {
+    document.getElementById('round').innerHTML = round;
+}
 
  /**
   * Check if the user clicked option matches the computer sequence
@@ -261,5 +267,19 @@ async function checkAnswer(currentRound) {
     boardArea.style.backgroundColor = 'red';
     await sleep(1000);
     boardArea.style.backgroundColor = 'black';
+
+    restartGame();
     }
+}
+
+/**
+ * Restart the game by
+ * Setting parameters to default state
+ */
+function restartGame() {
+    aiSequence = []
+    round = 0;
+    displayRound();
+    userRoundToClick = false;
+    started = false;
 }
