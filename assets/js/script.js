@@ -18,6 +18,9 @@ let started = false;
  */
 let userRoundToClick = false;
 
+
+let computerRound = false;
+
 /**
  * Store rounds
  */
@@ -143,11 +146,11 @@ function runGame() {
 function giveAlistener() {
     let allButtons = document.getElementsByClassName('board-button');
 
-    if (userRoundToClick = true) {
+    if (userRoundToClick == true) {
         for (let i = 0; i < allButtons.length; i++) {
         allButtons[i].addEventListener('click', userRound);
         }
-    } else {
+    } else if (userRoundToClick == false) {
         for (let i = 0; i < allButtons.length; i++) {
             allButtons[i].removeEventListener('click', userRound);
             }
@@ -163,25 +166,41 @@ function giveAlistener() {
 async function userRound(event) {
     if (userRoundToClick == true) {
         if (this.id == 'option1') {
+            userRoundToClick = false; // Prevents user from clicking while flashing
+            giveAlistener();
             userSequence.push(this.id);
             this.style.backgroundColor = 'white'
             await sleep(700);
             this.style.backgroundColor = 'yellow'
+            userRoundToClick = true; // Allows user to click again 
+            giveAlistener();
         } else if (this.id == 'option2') {
+            userRoundToClick = false;
+            giveAlistener();
             userSequence.push(this.id);
             this.style.backgroundColor = 'white'
             await sleep(700);
             this.style.backgroundColor = 'blue'
+            userRoundToClick = true;
+            giveAlistener();
         } else if (this.id == 'option3') {
+            userRoundToClick = false;
+            giveAlistener();
             userSequence.push(this.id);
             this.style.backgroundColor = 'white'
             await sleep(700);
             this.style.backgroundColor = 'green'
+            userRoundToClick = true;
+            giveAlistener();
         }else if (this.id == 'option4') {
+            userRoundToClick = false;
+            giveAlistener();
             userSequence.push(this.id);
             this.style.backgroundColor = 'white'
             await sleep(700);
             this.style.backgroundColor = 'red'
+            userRoundToClick = true;
+            giveAlistener();
         }
         
         checkAnswer(userSequence.length - 1);
@@ -221,7 +240,6 @@ async function playAiSequence() {
     for (let i = 0; i < aiSequence.length; i++) {
         await sleep(700);
         let flashing = document.getElementById(aiSequence[i]);
-        console.log(flashing);
         if (flashing.id == 'option1') {
             flashing.style.backgroundColor = 'white'
             await sleep(700);
