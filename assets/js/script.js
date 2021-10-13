@@ -14,6 +14,11 @@ let userSequence = [];
 let started = false;
 
 /**
+ * A way to check if it is the user round
+ */
+let userRoundToClick = false;
+
+/**
  * Store rounds
  */
 let round = "0";
@@ -129,49 +134,59 @@ function runGame() {
         playAiSequence();
         started = true;
     }
-
-    giveAlistener();
 }
 
 /**
  * Loops through the board game and add a listener to each button
+ * when userRoundToClick is true, else removes listeners.
  */
 function giveAlistener() {
     let allButtons = document.getElementsByClassName('board-button');
-    for (let i = 0; i < allButtons.length; i++) {
+
+    if (userRoundToClick = true) {
+        for (let i = 0; i < allButtons.length; i++) {
         allButtons[i].addEventListener('click', userRound);
-    }    
+        }
+    } else {
+        for (let i = 0; i < allButtons.length; i++) {
+            allButtons[i].removeEventListener('click', userRound);
+            }
+    }   
 }
 
 
 /**
+ * if userRoundToClick true,
  * listens to the buttons being clicked, flashes and push buttons id to array.
  * calls A function to check the answers 
  */
 async function userRound(event) {
-    if (this.id == 'option1') {
-        userSequence.push(this.id);
-        this.style.backgroundColor = 'white'
-        await sleep(700);
-        this.style.backgroundColor = 'yellow'
-    } else if (this.id == 'option2') {
-        userSequence.push(this.id);
-        this.style.backgroundColor = 'white'
-        await sleep(700);
-        this.style.backgroundColor = 'blue'
-    } else if (this.id == 'option3') {
-        userSequence.push(this.id);
-        this.style.backgroundColor = 'white'
-        await sleep(700);
-        this.style.backgroundColor = 'green'
-    }else if (this.id == 'option4') {
-        userSequence.push(this.id);
-        this.style.backgroundColor = 'white'
-        await sleep(700);
-        this.style.backgroundColor = 'red'
+    if (userRoundToClick == true) {
+        if (this.id == 'option1') {
+            userSequence.push(this.id);
+            this.style.backgroundColor = 'white'
+            await sleep(700);
+            this.style.backgroundColor = 'yellow'
+        } else if (this.id == 'option2') {
+            userSequence.push(this.id);
+            this.style.backgroundColor = 'white'
+            await sleep(700);
+            this.style.backgroundColor = 'blue'
+        } else if (this.id == 'option3') {
+            userSequence.push(this.id);
+            this.style.backgroundColor = 'white'
+            await sleep(700);
+            this.style.backgroundColor = 'green'
+        }else if (this.id == 'option4') {
+            userSequence.push(this.id);
+            this.style.backgroundColor = 'white'
+            await sleep(700);
+            this.style.backgroundColor = 'red'
+        }
+        
+        checkAnswer(userSequence.length - 1);
     }
     
-    checkAnswer(userSequence.length - 1);
 }
 
 /**
@@ -192,10 +207,13 @@ function newColour() {
 
 /**
  * Set user sequence array to empty
+ * Set userRoundToClick to false
  * Loops through the colours array and flashes the computer sequence
+ * Set userRoundToClick to true after sequence is done and call function to give listeners to buttons
  */ 
 async function playAiSequence() {
     userSequence = [];
+    userRoundToClick = false;
     round++;
     document.getElementById('round').innerHTML = round;
     newColour();
@@ -221,7 +239,10 @@ async function playAiSequence() {
             flashing.style.backgroundColor = 'red'
         }
     }
- }
+    userRoundToClick = true;
+    giveAlistener();
+ } 
+
 
  /**
   * Check if the user clicked option matches the computer sequence
