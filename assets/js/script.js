@@ -126,12 +126,10 @@ function runGame() {
     if (!started) {
         let newRound = document.getElementById('round');
         newRound.innerHTML = round;
-        newColour();
         playAiSequence();
         started = true;
     }
-    
-    
+
     giveAlistener();
 }
 
@@ -148,6 +146,7 @@ function giveAlistener() {
 
 /**
  * listens to the buttons being clicked, flashes and push buttons id to array.
+ * calls A function to check the answers 
  */
 async function userRound(event) {
     if (this.id == 'option1') {
@@ -171,6 +170,8 @@ async function userRound(event) {
         await sleep(700);
         this.style.backgroundColor = 'red'
     }
+    
+    checkAnswer(userSequence.length - 1);
 }
 
 /**
@@ -190,11 +191,14 @@ function newColour() {
  }
 
 /**
- * Loops through the colours array and flash the sequence
+ * Set user sequence array to empty
+ * Loops through the colours array and flashes the computer sequence
  */ 
 async function playAiSequence() {
+    userSequence = [];
     round++;
     document.getElementById('round').innerHTML = round;
+    newColour();
     for (let i = 0; i < aiSequence.length; i++) {
         await sleep(700);
         let flashing = document.getElementById(aiSequence[i]);
@@ -218,3 +222,23 @@ async function playAiSequence() {
         }
     }
  }
+
+ /**
+  * Check if the user clicked option matches the computer sequence
+  * Check if user sequence has the same length as computer sequence 
+  * Alerts the user if given the wrong answer
+  */
+async function checkAnswer(currentRound) {
+    if (aiSequence[currentRound] === userSequence[currentRound]) {
+        if (userSequence.length === aiSequence.length) {
+            setTimeout(function() {
+                playAiSequence();
+            }, 1000);
+        } 
+    } else {
+    let boardArea = document.getElementsByClassName('board-area')[0];
+    boardArea.style.backgroundColor = 'red';
+    await sleep(1000);
+    boardArea.style.backgroundColor = 'black';
+    }
+}
