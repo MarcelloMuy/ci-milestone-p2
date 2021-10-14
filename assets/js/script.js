@@ -229,6 +229,7 @@ function newColour() {
  * Set userRoundToClick to false
  * Increase round by 1 and display it
  * Loops through the colours array and flashes the computer sequence
+ * Increases the game speed after round 4
  * Set userRoundToClick to true after sequence is done and call function to give listeners to buttons
  */ 
 async function playAiSequence() {
@@ -238,23 +239,43 @@ async function playAiSequence() {
     displayRound();
     newColour();
     for (let i = 0; i < aiSequence.length; i++) {
-        await sleep(700);
+        if (round >= 5) {
+            await sleep(350);
+        } else {
+            await sleep(700);
+        }
         let flashing = document.getElementById(aiSequence[i]);
         if (flashing.id == 'option1') {
             flashing.style.backgroundColor = 'white'
-            await sleep(700);
+            if (round >= 5) {
+                await sleep(350);
+            } else {
+                await sleep(700);
+            }
             flashing.style.backgroundColor = 'yellow'
         } else if (flashing.id == 'option2') {
             flashing.style.backgroundColor = 'white'
-            await sleep(700);
+            if (round >= 5) {
+                await sleep(350);
+            } else {
+                await sleep(700);
+            }
             flashing.style.backgroundColor = 'blue'
         } else if (flashing.id == 'option3') {
             flashing.style.backgroundColor = 'white'
-            await sleep(700);
+            if (round >= 5) {
+                await sleep(350);
+            } else {
+                await sleep(700);
+            }
             flashing.style.backgroundColor = 'green'
         }else if (flashing.id == 'option4') {
             flashing.style.backgroundColor = 'white'
-            await sleep(700);
+            if (round >= 5) {
+                await sleep(350);
+            } else {
+                await sleep(700);
+            }
             flashing.style.backgroundColor = 'red'
         }
     }
