@@ -269,19 +269,24 @@ function displayRound() {
 }
 
  /**
-  * Check if the user clicked option matches the computer sequence
-  * Check if user sequence has the same length as computer sequence 
+  * Checks if the user clicked option matches the computer sequence
+  * Checks if user sequence has the same length as computer sequence
+  * Checks if user won the game 
   * Alerts the user if given the wrong answer
   */
 async function checkAnswer(currentRound) {
     if (aiSequence[currentRound] === userSequence[currentRound]) {
         if (userSequence.length === aiSequence.length) {
-            setTimeout(function() {
-                playAiSequence();
-            }, 1000);
+            if (round == 10) {
+                winGame();
+            } else {
+                setTimeout(function() {
+                    playAiSequence();
+                }, 1000);
+            }
         } 
     } else {
-    let boardArea = document.getElementsByClassName('board-area')[0];
+    let boardArea = document.getElementById('board-area');
     boardArea.style.backgroundColor = 'red';
     await sleep(1000);
     boardArea.style.backgroundColor = 'black';
@@ -291,8 +296,35 @@ async function checkAnswer(currentRound) {
 }
 
 /**
- * Restart the game by
- * Setting parameters to default state
+ * Sets display to none of major areas of game
+ * Create and display winning message
+ * Create and Diplay button to reload the page
+ */
+function winGame() {
+    let boardArea = document.getElementById('board-area');
+    let roundArea = document.getElementById('round-area');
+    let controlArea = document.getElementById('control-area');
+    boardArea.style.display = 'none';
+    roundArea.style.display = 'none';
+    controlArea.style.display = 'none';
+
+    let winAlert = document.createElement('div');
+
+    let winMessage = document.createElement('h2');
+    winMessage.innerText = "Well done, you beat the game!";
+    winAlert.appendChild(winMessage);
+
+    let restartButton = document.createElement('button');
+    restartButton.innerHTML = "X"
+    restartButton.addEventListener('click', reloadPage);
+    winAlert.appendChild(restartButton);
+
+    let body = document.getElementsByTagName('body');
+    body[0].appendChild(winAlert);
+}
+
+/**
+ * Restart the game by Setting parameters to default state
  */
 function restartGame() {
     aiSequence = []

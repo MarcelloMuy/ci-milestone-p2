@@ -20,7 +20,7 @@ h1 {
 }
 
 /* control area */
-.control-area {
+#control-area {
     margin-top: 1em;
 }
 .control-buttons {
@@ -34,12 +34,12 @@ h1 {
 
 /* Rounds counter area */
 
-.round-area {
+#round-area {
     margin-top: 1.5em;
 }
 
 /* Game area */
-.board-area {
+#board-area {
     text-align: center;
     background-color: black;
     margin-top: 0.3em;
