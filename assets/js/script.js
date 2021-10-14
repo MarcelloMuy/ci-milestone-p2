@@ -170,7 +170,7 @@ async function userRound(event) {
             giveAlistener();
             userSequence.push(this.id);
             this.style.backgroundColor = 'white'
-            await sleep(700);
+            await sleep(350);
             this.style.backgroundColor = 'yellow'
             userRoundToClick = true; // Allows user to click again 
             giveAlistener();
@@ -179,7 +179,7 @@ async function userRound(event) {
             giveAlistener();
             userSequence.push(this.id);
             this.style.backgroundColor = 'white'
-            await sleep(700);
+            await sleep(350);
             this.style.backgroundColor = 'blue'
             userRoundToClick = true;
             giveAlistener();
@@ -188,7 +188,7 @@ async function userRound(event) {
             giveAlistener();
             userSequence.push(this.id);
             this.style.backgroundColor = 'white'
-            await sleep(700);
+            await sleep(350);
             this.style.backgroundColor = 'green'
             userRoundToClick = true;
             giveAlistener();
@@ -197,7 +197,7 @@ async function userRound(event) {
             giveAlistener();
             userSequence.push(this.id);
             this.style.backgroundColor = 'white'
-            await sleep(700);
+            await sleep(350);
             this.style.backgroundColor = 'red'
             userRoundToClick = true;
             giveAlistener();
