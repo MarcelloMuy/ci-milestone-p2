@@ -30,8 +30,13 @@ let round = "0";
  * Creates a new paragraph with the instructions and a button to reload the page
  */
 function runInstructions() {
-    let newP = document.createElement('p');
-    newP.innerHTML = "This is the Instruction...";
+    let newP = document.createElement('div');
+    newP.innerHTML = `
+        <p>Press play to start. Simon will give the first signal. Repeat the signal by pressing the same colour.</p>
+        <p>Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same colours in order.</p>
+        <p>Simon will duplicate these first two signals and add one.</p>
+        <p>After the 4th round Simon will automatically speed up.</p>
+        <p>Finish 10 rounds to win the game</p>` 
     let instructionsDiv = document.getElementById('instructions-div');
     instructionsDiv.appendChild(newP);
     let button = document.getElementById('instructions'); 
@@ -40,6 +45,10 @@ function runInstructions() {
     closeInstructions.innerHTML = "X";
     instructionsDiv.appendChild(closeInstructions);
     closeInstructions.setAttribute('onclick', 'reloadPage()');
+}
+
+function createOrderedList() {
+
 }
 
 /**
