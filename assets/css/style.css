@@ -19,6 +19,12 @@ h1 {
     margin: 0.9em 0.9em 0 0.9em;
 }
 
+/* feedback form */
+form div, button {
+    margin: 0.3em;
+}
+
+
 /* control area */
 #control-area {
     margin-top: 1em;
