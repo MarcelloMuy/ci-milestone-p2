@@ -46,11 +46,6 @@ function runInstructions() {
     instructionsDiv.appendChild(closeInstructions);
     closeInstructions.setAttribute('onclick', 'reloadPage()');
 }
-
-function createOrderedList() {
-
-}
-
 /**
  * Creates a form when the feedback button is clicked
  * Creates a submit button
