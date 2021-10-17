@@ -185,6 +185,7 @@ async function playAiSequence() {
         }
         let flashing = document.getElementById(aiSequence[i]);
         if (flashing.id == 'option1') {
+            playAudio();
             flashing.style.backgroundColor = 'white'
             if (round >= 5) {
                 await sleep(350);
@@ -193,6 +194,7 @@ async function playAiSequence() {
             }
             flashing.style.backgroundColor = 'yellow'
         } else if (flashing.id == 'option2') {
+            playAudio();
             flashing.style.backgroundColor = 'white'
             if (round >= 5) {
                 await sleep(350);
@@ -201,6 +203,7 @@ async function playAiSequence() {
             }
             flashing.style.backgroundColor = 'blue'
         } else if (flashing.id == 'option3') {
+            playAudio();
             flashing.style.backgroundColor = 'white'
             if (round >= 5) {
                 await sleep(350);
@@ -209,6 +212,7 @@ async function playAiSequence() {
             }
             flashing.style.backgroundColor = 'green'
         }else if (flashing.id == 'option4') {
+            playAudio();
             flashing.style.backgroundColor = 'white'
             if (round >= 5) {
                 await sleep(350);
@@ -248,6 +252,7 @@ function giveAlistener() {
 async function userRound(event) {
     if (userRoundToClick == true) {
         if (this.id == 'option1') {
+            playAudio();
             userRoundToClick = false; // Prevents user from clicking while flashing
             giveAlistener();
             userSequence.push(this.id);
@@ -257,6 +262,7 @@ async function userRound(event) {
             userRoundToClick = true; // Allows user to click again 
             giveAlistener();
         } else if (this.id == 'option2') {
+            playAudio();
             userRoundToClick = false;
             giveAlistener();
             userSequence.push(this.id);
@@ -266,6 +272,7 @@ async function userRound(event) {
             userRoundToClick = true;
             giveAlistener();
         } else if (this.id == 'option3') {
+            playAudio();
             userRoundToClick = false;
             giveAlistener();
             userSequence.push(this.id);
@@ -275,6 +282,7 @@ async function userRound(event) {
             userRoundToClick = true;
             giveAlistener();
         }else if (this.id == 'option4') {
+            playAudio();
             userRoundToClick = false;
             giveAlistener();
             userSequence.push(this.id);
@@ -336,6 +344,10 @@ function winGame() {
     winMessage.innerText = "Well done, you beat the game!";
     winAlert.appendChild(winMessage);
 
+    let winImage = document.createElement('img');
+    winImage.src = './assets/images/win-image.png';
+    winAlert.appendChild(winImage);
+
     let restartButton = document.createElement('button');
     restartButton.innerHTML = "X"
     restartButton.addEventListener('click', reloadPage);
@@ -343,6 +355,20 @@ function winGame() {
 
     let body = document.getElementsByTagName('body');
     body[0].appendChild(winAlert);
+}
+
+/**
+ * plays a sound effect 
+ */
+function playAudio() {
+    let audio = document.getElementById('sound-effect');
+    let audio2 = document.getElementById('sound-effect2');
+    if (userRoundToClick) {
+        audio.play();
+    } else {
+        audio2.play();
+    }
+    
 }
 
 /**
