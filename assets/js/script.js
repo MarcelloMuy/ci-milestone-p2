@@ -18,9 +18,6 @@ let started = false;
  */
 let userRoundToClick = false;
 
-
-let computerRound = false;
-
 /**
  * Store rounds
  */
@@ -144,80 +141,11 @@ function runGame() {
 }
 
 /**
- * Loops through the board game and add a listener to each button
- * when userRoundToClick is true, else removes listeners.
- */
-function giveAlistener() {
-    let allButtons = document.getElementsByClassName('board-button');
-
-    if (userRoundToClick == true) {
-        for (let i = 0; i < allButtons.length; i++) {
-        allButtons[i].addEventListener('click', userRound);
-        }
-    } else if (userRoundToClick == false) {
-        for (let i = 0; i < allButtons.length; i++) {
-            allButtons[i].removeEventListener('click', userRound);
-            }
-    }   
-}
-
-
-/**
- * if userRoundToClick true,
- * listens to the buttons being clicked, flashes and push buttons id to array.
- * calls A function to check the answers 
- */
-async function userRound(event) {
-    if (userRoundToClick == true) {
-        if (this.id == 'option1') {
-            userRoundToClick = false; // Prevents user from clicking while flashing
-            giveAlistener();
-            userSequence.push(this.id);
-            this.style.backgroundColor = 'white'
-            await sleep(350);
-            this.style.backgroundColor = 'yellow'
-            userRoundToClick = true; // Allows user to click again 
-            giveAlistener();
-        } else if (this.id == 'option2') {
-            userRoundToClick = false;
-            giveAlistener();
-            userSequence.push(this.id);
-            this.style.backgroundColor = 'white'
-            await sleep(350);
-            this.style.backgroundColor = 'blue'
-            userRoundToClick = true;
-            giveAlistener();
-        } else if (this.id == 'option3') {
-            userRoundToClick = false;
-            giveAlistener();
-            userSequence.push(this.id);
-            this.style.backgroundColor = 'white'
-            await sleep(350);
-            this.style.backgroundColor = 'green'
-            userRoundToClick = true;
-            giveAlistener();
-        }else if (this.id == 'option4') {
-            userRoundToClick = false;
-            giveAlistener();
-            userSequence.push(this.id);
-            this.style.backgroundColor = 'white'
-            await sleep(350);
-            this.style.backgroundColor = 'red'
-            userRoundToClick = true;
-            giveAlistener();
-        }
-        
-        checkAnswer(userSequence.length - 1);
-    }
-    
-}
-
-/**
  * Generates a random number between 1 and 4
  */
-function newColour() {
-     let colour = Math.floor(Math.random() * 4 + 1);
-     aiSequence.push("option" + colour);
+ function newColour() {
+    let colour = Math.floor(Math.random() * 4 + 1);
+    aiSequence.push("option" + colour);
 }
 
 /**
@@ -227,6 +155,13 @@ function newColour() {
  function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve,milliseconds));
  }
+
+ /**
+ * Display the round number
+ */
+function displayRound() {
+    document.getElementById('round').innerHTML = round;
+}
 
 /**
  * Set user sequence array to empty
@@ -286,11 +221,73 @@ async function playAiSequence() {
     userRoundToClick = true;
     giveAlistener();
  } 
+
 /**
- * Display the round number
+ * Loops through the board game and add a listener to each button
+ * when userRoundToClick is true, else removes listeners.
  */
-function displayRound() {
-    document.getElementById('round').innerHTML = round;
+function giveAlistener() {
+    let allButtons = document.getElementsByClassName('board-button');
+
+    if (userRoundToClick == true) {
+        for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].addEventListener('click', userRound);
+        }
+    } else if (userRoundToClick == false) {
+        for (let i = 0; i < allButtons.length; i++) {
+            allButtons[i].removeEventListener('click', userRound);
+            }
+    }   
+}
+
+/**
+ * if userRoundToClick true,
+ * listens to the buttons being clicked, flashes and push buttons id to array.
+ * calls A function to check the answers 
+ */
+async function userRound(event) {
+    if (userRoundToClick == true) {
+        if (this.id == 'option1') {
+            userRoundToClick = false; // Prevents user from clicking while flashing
+            giveAlistener();
+            userSequence.push(this.id);
+            this.style.backgroundColor = 'white'
+            await sleep(350);
+            this.style.backgroundColor = 'yellow'
+            userRoundToClick = true; // Allows user to click again 
+            giveAlistener();
+        } else if (this.id == 'option2') {
+            userRoundToClick = false;
+            giveAlistener();
+            userSequence.push(this.id);
+            this.style.backgroundColor = 'white'
+            await sleep(350);
+            this.style.backgroundColor = 'blue'
+            userRoundToClick = true;
+            giveAlistener();
+        } else if (this.id == 'option3') {
+            userRoundToClick = false;
+            giveAlistener();
+            userSequence.push(this.id);
+            this.style.backgroundColor = 'white'
+            await sleep(350);
+            this.style.backgroundColor = 'green'
+            userRoundToClick = true;
+            giveAlistener();
+        }else if (this.id == 'option4') {
+            userRoundToClick = false;
+            giveAlistener();
+            userSequence.push(this.id);
+            this.style.backgroundColor = 'white'
+            await sleep(350);
+            this.style.backgroundColor = 'red'
+            userRoundToClick = true;
+            giveAlistener();
+        }
+        
+        checkAnswer(userSequence.length - 1);
+    }
+    
 }
 
  /**
