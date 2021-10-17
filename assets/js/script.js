@@ -54,7 +54,6 @@ function runFeedback() {
     newForm.setAttribute('id', 'feedback-form');
     newForm.setAttribute('method', 'POST')
     newForm.setAttribute('action', 'https://formdump.codeinstitute.net/');
-    newForm.addEventListener('submit', handleSubmit);
     newForm.innerHTML = `
     <div>
         <h2 aria-label="Form Heading">Give Your Feedback</h2>
@@ -73,7 +72,7 @@ function runFeedback() {
     </div>
     <div>
         <label for="feedback"></label>
-        <textarea id="feedback" name="feedback" placeholder="Your feedback..." rows="10" cols="38" aria-label="Enter text here"></textarea>
+        <textarea id="feedback" name="feedback" placeholder="Your feedback..." rows="10" cols="38" aria-label="Enter text here" required></textarea>
     </div>` 
     let feedbackDiv = document.getElementById('feedback-div');
     feedbackDiv.appendChild(newForm);
@@ -88,31 +87,6 @@ function runFeedback() {
     closeFeedback.innerHTML = "Close";
     newForm.appendChild(closeFeedback);
     closeFeedback.setAttribute('onclick', 'reloadPage()');
-}
-
-/**
- * Handle the submit event of the form
- * Display a pop up interacting with the user
- * Call a function to submit the form after the user have closed the feedback Popup
- * It was designed this way so the popup and the code institute form dump could be visualized separately   
- */
-function handleSubmit(event) {
-    event.preventDefault();
-    
-    let newForm = document.getElementById('feedback-form');
-    
-    let fname = newForm.elements['fname'].value;
-    let lname = newForm.elements['lname'].value;
-    let message =`
-    <p> Hi ${fname} ${lname}! Thank you for your feedback.</p>`
-    let feedbackPopup = document.getElementById('feedback-popup');
-    feedbackPopup.innerHTML = message;
-    let closeFeedbackPopup = document.createElement('button');
-    closeFeedbackPopup.innerHTML = "Close";
-    closeFeedbackPopup.setAttribute('onclick', 'formSubmit()')
-    feedbackPopup.appendChild(closeFeedbackPopup);
-    let fullForm = document.getElementById('feedback-div');
-    fullForm.style.display = "none";
 }
 
 /**
@@ -131,6 +105,9 @@ function reloadPage() {
     window.location.reload();
 }
 
+/**
+ * function to run the game
+ */
 function runGame() {
     if (!started) {
         let newRound = document.getElementById('round');
