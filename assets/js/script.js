@@ -24,24 +24,43 @@ let userRoundToClick = false;
 let round = "0";
 
 /**
- * Creates a new paragraph with the instructions and a button to reload the page
+ * A way to track if the instructions content have been generated
+ */
+let instructions = false;
+
+/**
+ * Creates a new paragraph with the instructions and a button to hide the content
  */
 function runInstructions() {
-    let newP = document.createElement('div');
-    newP.innerHTML = `
+    let instructionsDiv = document.getElementById('instructions-div');
+    let button = document.getElementById('instructions');
+
+    if (!instructions) {
+        let closeInstructions = document.createElement('button');
+        let newP = document.createElement('div');
+        newP.setAttribute('id', 'newP');
+        newP.innerHTML = `
         <p>Press play to start. Simon will give the first signal. Repeat the signal by pressing the same colour.</p>
         <p>Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same colours in order.</p>
         <p>Simon will duplicate these first two signals and add one.</p>
         <p>After the 4th round Simon will automatically speed up.</p>
         <p>Finish 10 rounds to win the game</p>` 
-    let instructionsDiv = document.getElementById('instructions-div');
-    instructionsDiv.appendChild(newP);
-    let button = document.getElementById('instructions'); 
-    button.remove();
-    let closeInstructions = document.createElement('button');
-    closeInstructions.innerHTML = "Close";
-    instructionsDiv.appendChild(closeInstructions);
-    closeInstructions.setAttribute('onclick', 'reloadPage()');
+        
+        instructionsDiv.appendChild(newP);
+        closeInstructions.setAttribute('id', 'close-instructions');
+        closeInstructions.innerHTML = "Close";
+        closeInstructions.setAttribute('onclick', 'hideContent()');
+        instructionsDiv.appendChild(closeInstructions);
+        button.style.display = 'none';    
+        instructions = true;
+    } else {
+        let div = document.getElementById('newP');
+        div.style.display = 'inline';
+        let closeInstructions = document.getElementById('close-instructions');
+        closeInstructions.style.display = 'inline';
+        let button = document.getElementById('instructions'); 
+        button.style.display = 'none';
+    }
 }
 /**
  * Creates a form when the feedback button is clicked
@@ -96,6 +115,18 @@ function runFeedback() {
 function formSubmit() {
     let newForm = document.getElementById('feedback-form');
     newForm.submit();
+}
+
+/**
+ * function to hide the instructions content
+ */
+function hideContent() {
+    let div = document.getElementById('newP');
+    div.style.display = 'none';
+    let closeInstructions = document.getElementById('close-instructions');
+    closeInstructions.style.display = 'none';
+    let button = document.getElementById('instructions'); 
+    button.style.display = 'inline';
 }
 
 /**
