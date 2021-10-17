@@ -39,7 +39,7 @@ function runInstructions() {
     let button = document.getElementById('instructions'); 
     button.remove();
     let closeInstructions = document.createElement('button');
-    closeInstructions.innerHTML = "X";
+    closeInstructions.innerHTML = "Close";
     instructionsDiv.appendChild(closeInstructions);
     closeInstructions.setAttribute('onclick', 'reloadPage()');
 }
@@ -85,7 +85,7 @@ function runFeedback() {
     submitButton.setAttribute('type', 'submit');
     newForm.appendChild(submitButton);
     let closeFeedback = document.createElement('button');
-    closeFeedback.innerHTML = "X";
+    closeFeedback.innerHTML = "Close";
     newForm.appendChild(closeFeedback);
     closeFeedback.setAttribute('onclick', 'reloadPage()');
 }
@@ -108,7 +108,7 @@ function handleSubmit(event) {
     let feedbackPopup = document.getElementById('feedback-popup');
     feedbackPopup.innerHTML = message;
     let closeFeedbackPopup = document.createElement('button');
-    closeFeedbackPopup.innerHTML = "X";
+    closeFeedbackPopup.innerHTML = "Close";
     closeFeedbackPopup.setAttribute('onclick', 'formSubmit()')
     feedbackPopup.appendChild(closeFeedbackPopup);
     let fullForm = document.getElementById('feedback-div');
@@ -295,7 +295,6 @@ async function userRound(event) {
         
         checkAnswer(userSequence.length - 1);
     }
-    
 }
 
  /**
@@ -328,6 +327,7 @@ async function checkAnswer(currentRound) {
 /**
  * Sets display to none of major areas of game
  * Create and display winning message
+ * Create and display a winning img
  * Create and Diplay button to reload the page
  */
 function winGame() {
@@ -344,14 +344,14 @@ function winGame() {
     winMessage.innerText = "Well done, you beat the game!";
     winAlert.appendChild(winMessage);
 
+    let restartButton = document.createElement('button');
+    restartButton.innerHTML = "Restart game"
+    restartButton.addEventListener('click', reloadPage);
+    winAlert.appendChild(restartButton);
+
     let winImage = document.createElement('img');
     winImage.src = './assets/images/win-image.png';
     winAlert.appendChild(winImage);
-
-    let restartButton = document.createElement('button');
-    restartButton.innerHTML = "X"
-    restartButton.addEventListener('click', reloadPage);
-    winAlert.appendChild(restartButton);
 
     let body = document.getElementsByTagName('body');
     body[0].appendChild(winAlert);
@@ -368,7 +368,6 @@ function playAudio() {
     } else {
         audio2.play();
     }
-    
 }
 
 /**
