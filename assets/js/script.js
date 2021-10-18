@@ -51,6 +51,7 @@ function runInstructions() {
         <p>After the 4th round Simon will automatically speed up.</p>
         <p>Finish 10 rounds to win the game</p>
         <p>If wrong pattern is selected the game board will flash red, an alert sound is played, and game parameters are set to default</p>
+        <p>You can restart the game at any time by pressing the restart button</p>
         ` 
         
         instructionsDiv.appendChild(newP);
@@ -165,6 +166,9 @@ function reloadPage() {
 function runGame() {
     if (!started) {
         playAiSequence();
+        let play = document.getElementById('play');
+        play.innerHTML = 'Restart';
+        play.setAttribute('onclick', 'restartGame()');
         started = true;
     }
 }
@@ -417,6 +421,9 @@ function restartGame() {
     aiSequence = []
     round = 0;
     displayRound();
+    let play = document.getElementById('play');
+    play.innerHTML = 'Play';
+    play.setAttribute('onclick', 'runGame()')
     userRoundToClick = false;
     started = false;
 }
