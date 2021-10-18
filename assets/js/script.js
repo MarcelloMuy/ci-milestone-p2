@@ -34,11 +34,6 @@ let instructions = false;
 let feedbackForm = false;
 
 /**
- * Tracks wrong answer
- */
-let wrongAnswer = false;
-
-/**
  * Creates a new paragraph with the instructions and a button to hide the content
  */
 function runInstructions() {
@@ -349,8 +344,7 @@ async function checkAnswer(currentRound) {
             }
         } 
     } else {
-        wrongAnswer = true;
-        playAudio();
+        wrongAnswerAudio();
         let boardArea = document.getElementById('board-area');
         boardArea.style.backgroundColor = 'red';
         await sleep(1000);
@@ -399,14 +393,16 @@ function winGame() {
 function playAudio() {
     let audio = document.getElementById('sound-effect');
     let audio2 = document.getElementById('sound-effect2');
-    let audio3 = document.getElementById('sound-effect3');
     if (userRoundToClick) {
         audio.play();
-    } else if (wrongAnswer == true) {
-        audio3.play();
     } else if (!userRoundToClick) {
         audio2.play();
     }
+}
+
+function wrongAnswerAudio() {
+    let audio3 = document.getElementById('sound-effect3');
+    audio3.play();
 }
 
 /**
@@ -418,5 +414,4 @@ function restartGame() {
     displayRound();
     userRoundToClick = false;
     started = false;
-    wrongAnswer = false;
 }
