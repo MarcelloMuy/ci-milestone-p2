@@ -24,14 +24,19 @@ let userRoundToClick = false;
 let round = "0";
 
 /**
- * A way to track if the instructions content have been generated
+ * Tracks if the instructions content have been generated
  */
 let instructions = false;
 
 /**
- * A way to track if the feedback form have been generated
+ * Tracks if the feedback form have been generated
  */
 let feedbackForm = false;
+
+/**
+ * Tracks wrong answer
+ */
+let wrongAnswer = false;
 
 /**
  * Creates a new paragraph with the instructions and a button to hide the content
@@ -344,12 +349,14 @@ async function checkAnswer(currentRound) {
             }
         } 
     } else {
-    let boardArea = document.getElementById('board-area');
-    boardArea.style.backgroundColor = 'red';
-    await sleep(1000);
-    boardArea.style.backgroundColor = 'black';
+        wrongAnswer = true;
+        playAudio();
+        let boardArea = document.getElementById('board-area');
+        boardArea.style.backgroundColor = 'red';
+        await sleep(1000);
+        boardArea.style.backgroundColor = 'black';
 
-    restartGame();
+        restartGame();
     }
 }
 
@@ -392,9 +399,12 @@ function winGame() {
 function playAudio() {
     let audio = document.getElementById('sound-effect');
     let audio2 = document.getElementById('sound-effect2');
+    let audio3 = document.getElementById('sound-effect3');
     if (userRoundToClick) {
         audio.play();
-    } else {
+    } else if (wrongAnswer == true) {
+        audio3.play();
+    } else if (!userRoundToClick) {
         audio2.play();
     }
 }
@@ -408,4 +418,5 @@ function restartGame() {
     displayRound();
     userRoundToClick = false;
     started = false;
+    wrongAnswer = false;
 }
