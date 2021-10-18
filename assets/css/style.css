@@ -102,4 +102,23 @@ form div, button {
     width: 160px;
 }
 
+/* Make responsive for "very" small screens */
+@media only screen and (max-width: 320px) {
+    /* logo area */
+    h1 {
+        font-size: 27px;
+    }
 
+    /* Game board area */
+    .board-button {
+        width: 140px;
+        height: 140px;
+    }
+
+    .control-buttons {
+        font-size: 12px;  
+    }
+}
+
+  
+    
