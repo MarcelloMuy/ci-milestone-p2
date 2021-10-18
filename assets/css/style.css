@@ -35,13 +35,13 @@ form div, button {
     margin: 0.3em;
     font-weight: 400;
     font-family: 'Montserrat', 'sans serif';
-    font-size: 12px;
+    font-size: 15px;
+    width: 160px;
 }
 
-/* Rounds counter area */
-
-#round-area {
-    margin-top: 1.5em;
+/* Rounds area */
+#round-area p {
+    margin: 0;
 }
 
 /* Game area */
