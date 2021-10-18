@@ -29,6 +29,11 @@ let round = "0";
 let instructions = false;
 
 /**
+ * A way to track if the feedback form have been generated
+ */
+let feedbackForm = false;
+
+/**
  * Creates a new paragraph with the instructions and a button to hide the content
  */
 function runInstructions() {
@@ -69,52 +74,68 @@ function runInstructions() {
  * 
  */
 function runFeedback() {
-    let newForm = document.createElement('form');
-    newForm.setAttribute('id', 'feedback-form');
-    newForm.setAttribute('method', 'POST')
-    newForm.setAttribute('action', 'https://formdump.codeinstitute.net/');
-    newForm.innerHTML = `
-    <div>
-        <h2 aria-label="Form Heading">Give Your Feedback</h2>
-    </div>
-    <div>
-        <label for="fname">First Name:</label>
-        <input id="fname" name="fname" type="text" placeholder="Enter first name" aria-label="Enter first name" required>
-    </div>
-    <div>
-        <label for="lname">Last Name:</label>
-        <input id="lname" name="lname" type="text" placeholder="Enter last name" aria-label="Enter last name" required>
-    </div>
-    <div>
-        <label for="email">Email Adress:</label>
-        <input type="email" id="email" name="email_address" placeholder="Enter e-mail" aria-label="Enter e-mail" required>       
-    </div>
-    <div>
-        <label for="feedback"></label>
-        <textarea id="feedback" name="feedback" placeholder="Your feedback..." rows="10" cols="38" aria-label="Enter text here" required></textarea>
-    </div>` 
     let feedbackDiv = document.getElementById('feedback-div');
-    feedbackDiv.appendChild(newForm);
-
     let button = document.getElementById('feedback'); 
-    button.remove();
-    let submitButton = document.createElement('button');
-    submitButton.innerHTML = "Submit";
-    submitButton.setAttribute('type', 'submit');
-    newForm.appendChild(submitButton);
-    let closeFeedback = document.createElement('button');
-    closeFeedback.innerHTML = "Close";
-    newForm.appendChild(closeFeedback);
-    closeFeedback.setAttribute('onclick', 'reloadPage()');
+    
+    if (!feedbackForm) {
+        let newForm = document.createElement('form');
+        newForm.setAttribute('id', 'feedback-form');
+        newForm.setAttribute('method', 'POST')
+        newForm.setAttribute('action', 'https://formdump.codeinstitute.net/');
+        newForm.innerHTML = `
+        <div>
+            <h2 aria-label="Form Heading">Give Your Feedback</h2>
+        </div>
+        <div>
+            <label for="fname">First Name:</label>
+            <input id="fname" name="fname" type="text" placeholder="Enter first name" aria-label="Enter first name" required>
+        </div>
+        <div>
+            <label for="lname">Last Name:</label>
+            <input id="lname" name="lname" type="text" placeholder="Enter last name" aria-label="Enter last name" required>
+        </div>
+        <div>
+            <label for="email">Email Adress:</label>
+            <input type="email" id="email" name="email_address" placeholder="Enter e-mail" aria-label="Enter e-mail" required>       
+        </div>
+        <div>
+            <label for="feedback"></label>
+            <textarea id="feedback" name="feedback" placeholder="Your feedback..." rows="10" cols="38" aria-label="Enter text here" required></textarea>
+        </div>` 
+    
+        feedbackDiv.appendChild(newForm);
+        button.style.display = 'none';
+
+        let submitButton = document.createElement('button');
+        submitButton.innerHTML = "Submit";
+        submitButton.setAttribute('type', 'submit');
+        newForm.appendChild(submitButton);
+        let closeFeedback = document.createElement('button');
+        closeFeedback.setAttribute('id', 'close-feedback')
+        closeFeedback.innerHTML = "Close";
+        newForm.appendChild(closeFeedback);
+        closeFeedback.setAttribute('onclick', 'hideForm()');
+        feedbackForm = true;
+    } else {
+        let form = document.getElementById('feedback-form');
+        form.style.display = 'inline';
+        let closeFeedback = document.getElementById('close-feedback');
+        closeFeedback.style.display = 'inline';
+        let button = document.getElementById('feedback'); 
+        button.style.display = 'none';
+    }
 }
 
 /**
- * Submit the feedback form
- * Will be called when the user close the feedback Popup
+ * Function to hide the feedback form
  */
-function formSubmit() {
-    let newForm = document.getElementById('feedback-form');
-    newForm.submit();
+function hideForm() {
+    let form = document.getElementById('feedback-form');
+    form.style.display = 'none';
+    let closeFeedback = document.getElementById('close-feedback');
+    closeFeedback.style.display = 'none';
+    let button = document.getElementById('feedback'); 
+    button.style.display = 'inline';
 }
 
 /**
