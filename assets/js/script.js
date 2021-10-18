@@ -164,8 +164,6 @@ function reloadPage() {
  */
 function runGame() {
     if (!started) {
-        let newRound = document.getElementById('round');
-        newRound.innerHTML = round;
         playAiSequence();
         started = true;
     }
@@ -191,7 +189,7 @@ function runGame() {
  * Display the round number
  */
 function displayRound() {
-    document.getElementById('round').innerHTML = round;
+    document.getElementById('round').innerHTML = ` ${round}`;
 }
 
 /**
