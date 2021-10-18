@@ -49,7 +49,9 @@ function runInstructions() {
         <p>Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same colours in order.</p>
         <p>Simon will duplicate these first two signals and add one.</p>
         <p>After the 4th round Simon will automatically speed up.</p>
-        <p>Finish 10 rounds to win the game</p>` 
+        <p>Finish 10 rounds to win the game</p>
+        <p>If wrong pattern is selected the game board will flash red, an alert sound is played, and game parameters are set to default</p>
+        ` 
         
         instructionsDiv.appendChild(newP);
         closeInstructions.setAttribute('id', 'close-instructions');
@@ -330,7 +332,7 @@ async function userRound(event) {
   * Checks if the user clicked option matches the computer sequence
   * Checks if user sequence has the same length as computer sequence
   * Checks if user won the game 
-  * Alerts the user if given the wrong answer
+  * Alerts the user if given the wrong answer and restart the game
   */
 async function checkAnswer(currentRound) {
     if (aiSequence[currentRound] === userSequence[currentRound]) {
@@ -358,7 +360,7 @@ async function checkAnswer(currentRound) {
  * Sets display to none of major areas of game
  * Create and display winning message
  * Create and display a winning img
- * Create and Diplay button to reload the page
+ * Create and display button to reload the page
  */
 function winGame() {
     let boardArea = document.getElementById('board-area');
@@ -400,6 +402,9 @@ function playAudio() {
     }
 }
 
+/**
+ * Plays sounds for wrong answers
+ */
 function wrongAnswerAudio() {
     let audio3 = document.getElementById('sound-effect3');
     audio3.play();
