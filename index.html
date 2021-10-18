@@ -14,38 +14,40 @@
     <title>Simon Game</title>
 </head>
 <body>
-    <!-- Page heading and game instructions -->
-    <div class="logo">
-        <h1>Simon Game</h1>
-    </div>
-    <div id="control-area">
-        
-        <div id="instructions-div">
-            <button class="control-buttons" id="instructions" onclick="runInstructions()">Instructions</button>
+    <!-- Wraps the game -->
+    <div id="game-container">
+        <!-- Page heading and game instructions -->
+        <div class="logo">
+            <h1>Simon Game</h1>
         </div>
-        <div id="feedback-div">
-            <button class="control-buttons" id="feedback" onclick="runFeedback()">Feedback</button>
+        <div id="control-area">
+            
+            <div id="instructions-div">
+                <button class="control-buttons" id="instructions" onclick="runInstructions()">Instructions</button>
+            </div>
+            <div id="feedback-div">
+                <button class="control-buttons" id="feedback" onclick="runFeedback()">Feedback</button>
+            </div>
+            <div>
+                <button class="control-buttons" id="play" onclick="runGame()">Play</button>
+            </div>
         </div>
-        <div>
-            <button class="control-buttons" id="play" onclick="runGame()">Play</button>
-        </div>
-    </div>
 
-     <!-- Rounds counter -->
-     <div id="round-area">
-        <p>Round:<span id="round">0</span><p>
-    </div>
+        <!-- Rounds counter -->
+        <div id="round-area">
+            <p>Round:<span id="round">0</span><p>
+        </div>
 
-    <!-- Game area -->
-    <div id="board-area">
-        <div>
-            <div class="board-button" id="option1"></div><div class="board-button" id="option2"></div>
-        </div>
-        <div>
-            <div class="board-button" id="option3"></div><div class="board-button" id="option4"></div>
+        <!-- Game area -->
+        <div id="board-area">
+            <div>
+                <div class="board-button" id="option1"></div><div class="board-button" id="option2"></div>
+            </div>
+            <div>
+                <div class="board-button" id="option3"></div><div class="board-button" id="option4"></div>
+            </div>
         </div>
     </div>
-    
     <!-- Flash image sounds -->
     <div>
         <audio id="sound-effect" src="https://raw.githubusercontent.com/MarcelloMuy/ci-milestone-p2/master/assets/sounds/sound-effect.mp3"></audio>

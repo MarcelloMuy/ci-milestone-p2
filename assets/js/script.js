@@ -377,11 +377,13 @@ function winGame() {
     winAlert.appendChild(winMessage);
 
     let restartButton = document.createElement('button');
+    restartButton.setAttribute('id', 'restart-button');
     restartButton.innerHTML = "Restart game"
     restartButton.addEventListener('click', reloadPage);
     winAlert.appendChild(restartButton);
 
     let winImage = document.createElement('img');
+    winImage.setAttribute('id', 'win-image');
     winImage.src = './assets/images/win-image.png';
     winAlert.appendChild(winImage);
 

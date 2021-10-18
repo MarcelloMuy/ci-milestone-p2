@@ -19,6 +19,10 @@ h1 {
     margin: 0.9em 0.9em 0 0.9em;
 }
 
+h2 {
+    margin: 4px 0;
+}
+
 /* feedback form */
 form div, button {
     margin: 0.3em;
@@ -77,6 +81,21 @@ form div, button {
 #option4 {
     background-color: red;
     border-bottom-right-radius: 100%;
+}
+
+/* Winning message */
+#win-image {
+    width: 100%;
+}
+
+#restart-button {
+    border-radius: 0.2em;
+    padding: 0.45em 0.9em;
+    margin: 0.3em;
+    font-weight: 400;
+    font-family: 'Montserrat', 'sans serif';
+    font-size: 15px;
+    width: 160px;
 }
 
 
