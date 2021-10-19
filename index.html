@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- fonts Awesome link -->
+    <script src="https://kit.fontawesome.com/be76cb8c3d.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Simon Game</title>
@@ -33,10 +35,17 @@
             </div>
         </div>
 
-        <!-- Rounds counter -->
-        <div id="round-area">
-            <p>Round:<span id="round"> 0</span><p>
+        <!-- Rounds counter  and mute control-->
+        <div id="container">
+            <span id="mute">
+                <label for="audio-mute"><i id="mute-icon" class="fas fa-volume-mute"></i></label>
+                <input type="checkbox" id="checkbox" name="audio-mute">
+            </span>
+            <div id="round-area"> 
+                <p>Round:<span id="round"> 0</span><p>                   
+            </div>
         </div>
+        
 
         <!-- Game area -->
         <div id="board-area">

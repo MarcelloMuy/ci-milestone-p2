@@ -372,7 +372,7 @@ async function userRound(event) {
 async function checkAnswer(currentRound) {
     if (aiSequence[currentRound] === userSequence[currentRound]) {
         if (userSequence.length === aiSequence.length) {
-            if (round == 1) {
+            if (round == 10) {
                 winGame();
             } else {
                 setTimeout(function() {
@@ -401,6 +401,8 @@ function winGame() {
     let boardArea = document.getElementById('board-area');
     let roundArea = document.getElementById('round-area');
     let controlArea = document.getElementById('control-area');
+    let muteBox = document.getElementById('mute');
+    muteBox.style.display = 'none';
     boardArea.style.display = 'none';
     roundArea.style.display = 'none';
     controlArea.style.display = 'none';
@@ -429,12 +431,18 @@ function winGame() {
  * plays a sound effect 
  */
 function playAudio() {
-    let audio = document.getElementById('sound-effect');
-    let audio2 = document.getElementById('sound-effect2');
-    if (userRoundToClick) {
+    let checkBox = document.getElementById('checkbox');
+    
+    if (checkBox.checked == true) {
+        // Do nothing 
+    } else {
+        let audio = document.getElementById('sound-effect');
+        let audio2 = document.getElementById('sound-effect2');
+        if (userRoundToClick) {
         audio.play();
-    } else if (!userRoundToClick) {
+        } else if (!userRoundToClick) {
         audio2.play();
+    }
     }
 }
 

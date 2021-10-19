@@ -27,6 +27,7 @@ h2 {
 button {
     font-weight: 700;
 }
+
 /* feedback form */
 form div, button {
     margin: 0.3em;
@@ -50,6 +51,17 @@ form div, button {
 /* Rounds area */
 #round-area p {
     margin: 0;
+}
+
+#container {
+    text-align: justify;
+    margin-left: 25%; 
+}
+
+/* Mute Control */
+#mute {
+    float: right;
+    margin-right: 25%;
 }
 
 /* Game area */
