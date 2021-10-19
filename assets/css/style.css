@@ -123,7 +123,7 @@ form div, button {
 @media only screen and (min-width: 765px) {
     /* All page */
     body {
-        background: url('/assets/images/gif-image.gif') center;
+        background: url('https://raw.githubusercontent.com/MarcelloMuy/ci-milestone-p2/master/assets/images/gif-image.gif') center;
         background-size: cover;
     }
 
