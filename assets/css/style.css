@@ -104,22 +104,41 @@ form div, button {
 
 /* Make responsive for "very" small screens */
 @media only screen and (min-width: 320px) {
-
-    /* logo area */
-    h1 {
-        font-size: 27px;
-    }
-
-    /* Game board area */
-    .board-button {
-        width: 140px;
-        height: 140px;
-    }
-
-    .control-buttons {
-        font-size: 12px;  
-    }
+/* logo area */
+h1 {
+    font-size: 30px;
 }
+/* Controls area */
+.control-buttons {
+    font-size: 13px;  
+}
+#control-area {
+    margin-top: 5px;
+}
+
+/* Game board area */
+.board-button {
+    width: 140px;
+    height: 140px;
+}
+
+/* Rounds area */
+#round-area p { 
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+#round-area p:nth-child(2) {
+    display: none;
+}
+
+/* Game area */
+#board-area {
+    padding: 6 0;
+}
+}
+
+/* make responsive for wider screens */
 @media only screen and (min-width: 765px) {
     /* All page */
     body {
@@ -130,7 +149,7 @@ form div, button {
     #game-container {
         background-color: white;
         height: 100%;
-        width: 66%;
+        width: 70%;
         margin: auto
 
     }
@@ -175,6 +194,143 @@ form div, button {
     }
 }
 
+/* Make responsive for larger mobile phones */
+@media (min-width: 375px) and (max-width: 425px) {
+    /* logo */
+    h1 {
+        font-size : 35px;
+    }
+    .logo {
+        margin-top: 0;
+        padding-top: 25px;
+    }
+
+    /* Game board area */
+    .board-button {
+        width: 182px;
+        height: 182px;
+    }  
+    /* Controls area  */
+    #instructions-div {
+        margin-top: 30px;
+    }
+
+    .control-buttons {
+        font-size: 20px;
+        width: 220px;  
+    }
+    /* Game area */
+    #board-area {
+        padding: 37 0;
+    }
+        
+    /* Rounds area */
+    #round-area p {
+        margin-bottom: 10px;
+        margin-top: 25px;
+        font-size: 20px;
+    }
+    
+    #round-area p:nth-child(2) {
+        display: none;
+    }
+}
+
+/* Make responsive for larger mobile phones with different height */
+@media (min-height: 660px) and (max-height: 700px)  {
+    .logo {
+        margin-top: 0;
+        padding-top: 18px;
+    }
+    /* Controls area  */
+    #instructions-div {
+        margin-top: 0;
+    }
+
+/* control buttons */
+    .control-buttons {
+        font-size: 16px;
+        width: 220px;  
+    }
+
+    /* Rounds area */
+    #round-area p {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    
+    #round-area p:nth-child(2) {
+        display: none;
+    }
+
+    /* Game area */
+    #board-area {
+        padding: 10px 0;
+    }
+
+}
+
+/* Make responsive for laptops */
+@media (min-width: 1200px) and (max-width: 1500px)  {
+    #game-container {
+        width: 50%
+    }
+    .logo {
+        margin-top: 0;
+        padding-top: 18px;
+    }
+    /* Controls area  */
+    #instructions-div {
+        margin-top: 0;
+    }
+    #control-area {
+        margin: 12px;
+    }
+
+/* control buttons */
+    .control-buttons {
+        font-size: 20px;
+        width: 300px;  
+    }
+
+    /* Rounds area */
+    #round-area p {
+        margin-bottom: 10px;
+        margin-top: 2px;
+        font-size: 20px;
+    }
+    
+    #round-area p:nth-child(2) {
+        display: none;
+    }
+
+    /* Game area */
+    #board-area {
+        padding: 10px 0;
+    }
+
+} 
+/* Media queries for very large screens */
+@media (min-width: 1500px) and (max-width: 1700px)  {
+    #game-container {
+        width: 50%
+    }
+    /* control buttons */
+    .control-buttons {
+        font-size: 29px;
+        width: 350px;  
+    }
+     /* Rounds area */
+    #round-area p {
+        margin-bottom: 15px;
+        font-size: 25px;
+    }
+    #round-area p:nth-child(2) {
+        display: none;
+    }
+}
+  
 
   
     
