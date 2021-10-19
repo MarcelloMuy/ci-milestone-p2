@@ -61,7 +61,7 @@ form div, button {
 /* Mute Control */
 #mute {
     float: right;
-    margin-right: 25%;
+    margin-right: 30%;
 }
 
 /* Game area */
@@ -204,6 +204,15 @@ h1 {
     #round-area p:nth-child(2) {
         display: none;
     }
+    /* Checkbox area */
+    #mute-icon {
+        font-size: 35
+     }
+     #checkbox {
+         margin: 0;
+         width: 25;
+         height: 25;
+     }
 }
 
 /* Make responsive for larger mobile phones */
@@ -246,6 +255,17 @@ h1 {
     #round-area p:nth-child(2) {
         display: none;
     }
+
+    /* checkbox area */
+    #mute-icon {
+        font-size: 25
+     }
+
+    #checkbox {
+         margin: 0;
+         width: 20;
+         height: 20;
+     }
 }
 
 /* Make responsive for larger mobile phones with different height */

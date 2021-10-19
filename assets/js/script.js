@@ -450,8 +450,13 @@ function playAudio() {
  * Plays sounds for wrong answers
  */
 function wrongAnswerAudio() {
+    let checkBox = document.getElementById('checkbox');
+    if (checkBox.checked == true) {
+        // Do nothing 
+    } else {
     let audio3 = document.getElementById('sound-effect3');
     audio3.play();
+    }
 }
 
 /**
