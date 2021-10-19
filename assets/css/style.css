@@ -103,7 +103,8 @@ form div, button {
 }
 
 /* Make responsive for "very" small screens */
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 320px) {
+
     /* logo area */
     h1 {
         font-size: 27px;
@@ -119,6 +120,61 @@ form div, button {
         font-size: 12px;  
     }
 }
+@media only screen and (min-width: 765px) {
+    /* All page */
+    body {
+        background: url('/assets/images/gif-image.gif') center;
+        background-size: cover;
+    }
+
+    #game-container {
+        background-color: white;
+        height: 100%;
+        width: 66%;
+        margin: auto
+
+    }
+    /* logo area */
+
+    .logo {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    /* Controls area */
+    #control-area{
+        margin-top: 35
+    }
+
+    .control-buttons {
+        font-size: 25px;
+        width: 220px;  
+    }
+
+    /* Game board area */
+    .board-button {
+        width: 245px;
+        height: 245px;
+    }
+
+    #board-area {
+        padding: 37 0;
+    }
+
+    /* Rounds area */
+    #round-area p {
+        margin-bottom: 20px;
+        margin-top: 50px;
+        font-size: 25px;
+    }
+
+    #round-area p:nth-child(2) {
+        display: none;
+    }
+}
+
 
   
     

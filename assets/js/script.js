@@ -82,6 +82,7 @@ function runFeedback() {
     
     if (!feedbackForm) {
         let newForm = document.createElement('form');
+        newForm.style.display = 'inline';
         newForm.setAttribute('id', 'feedback-form');
         newForm.setAttribute('method', 'POST')
         newForm.setAttribute('action', 'https://formdump.codeinstitute.net/');
@@ -105,7 +106,8 @@ function runFeedback() {
             <label for="feedback"></label>
             <textarea id="feedback" name="feedback" placeholder="Your feedback..." rows="10" cols="38" aria-label="Enter text here" required></textarea>
         </div>` 
-    
+        
+        
         feedbackDiv.appendChild(newForm);
         button.style.display = 'none';
 
@@ -116,10 +118,11 @@ function runFeedback() {
         let closeFeedback = document.createElement('button');
         closeFeedback.setAttribute('id', 'close-feedback')
         closeFeedback.innerHTML = "Close";
-        newForm.appendChild(closeFeedback);
+        feedbackDiv.appendChild(closeFeedback);
         closeFeedback.setAttribute('onclick', 'hideForm()');
         feedbackForm = true;
     } else {
+        addRequired();
         let form = document.getElementById('feedback-form');
         form.style.display = 'inline';
         let closeFeedback = document.getElementById('close-feedback');
@@ -135,12 +138,42 @@ function runFeedback() {
 function hideForm() {
     let form = document.getElementById('feedback-form');
     form.style.display = 'none';
+    removeRequired();
     let closeFeedback = document.getElementById('close-feedback');
     closeFeedback.style.display = 'none';
     let button = document.getElementById('feedback'); 
     button.style.display = 'inline';
 }
 
+/**
+ * Add required attribute
+ */
+function addRequired() {
+    let form = document.getElementById('feedback-form');
+    let input = document.getElementsByTagName('input');
+    let textArea = document.getElementsByTagName('textarea');
+    for (i = 0; i < input.length; i++) {
+        if (form.style.display = 'inline'){
+        input[i].required = true;
+        textArea[0].required = true;
+        }
+    }
+}
+
+/**
+ * Remove required Attribute
+ */
+function removeRequired() {
+    let form = document.getElementById('feedback-form');
+    let input = document.getElementsByTagName('input');
+    let textArea = document.getElementsByTagName('textarea');
+    for (i = 0; i < input.length; i++) {
+        if (form.style.display = 'none') {
+            input[i].required = false;
+            textArea[0].required = false;
+        }
+    }
+}
 /**
  * function to hide the instructions content
  */
