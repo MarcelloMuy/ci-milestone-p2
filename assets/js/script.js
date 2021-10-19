@@ -372,7 +372,7 @@ async function userRound(event) {
 async function checkAnswer(currentRound) {
     if (aiSequence[currentRound] === userSequence[currentRound]) {
         if (userSequence.length === aiSequence.length) {
-            if (round == 10) {
+            if (round == 1) {
                 winGame();
             } else {
                 setTimeout(function() {
@@ -406,6 +406,8 @@ function winGame() {
     controlArea.style.display = 'none';
 
     let winAlert = document.createElement('div');
+    let gameContainer = document.getElementById('game-container');
+    gameContainer.appendChild(winAlert);
 
     let winMessage = document.createElement('h2');
     winMessage.innerText = "Well done, you beat the game!";
@@ -421,9 +423,6 @@ function winGame() {
     winImage.setAttribute('id', 'win-image');
     winImage.src = './assets/images/win-image.png';
     winAlert.appendChild(winImage);
-
-    let body = document.getElementsByTagName('body');
-    body[0].appendChild(winAlert);
 }
 
 /**
