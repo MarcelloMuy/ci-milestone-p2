@@ -34,6 +34,11 @@ let instructions = false;
 let feedbackForm = false;
 
 /**
+ * Controls sound
+ */
+let audioMute = true;
+
+/**
  * Creates a new paragraph with the instructions and a button to hide the content
  */
 function runInstructions() {
@@ -51,8 +56,7 @@ function runInstructions() {
         <p>After the 4th round Simon will automatically speed up.</p>
         <p>Finish 10 rounds to win the game</p>
         <p>If the wrong pattern is selected the game board will flash red, an alert sound is played, and game parameters are set to default</p>
-        <p>You can restart the game at any time by pressing the restart button</p>
-        ` 
+        <p>You can restart the game at any time by pressing the restart button</p>`; 
         
         instructionsDiv.appendChild(newP);
         closeInstructions.setAttribute('id', 'close-instructions');
@@ -84,7 +88,7 @@ function runFeedback() {
         let newForm = document.createElement('form');
         newForm.style.display = 'inline';
         newForm.setAttribute('id', 'feedback-form');
-        newForm.setAttribute('method', 'POST')
+        newForm.setAttribute('method', 'POST');
         newForm.setAttribute('action', 'https://formdump.codeinstitute.net/');
         newForm.innerHTML = `
         <div>
@@ -108,7 +112,7 @@ function runFeedback() {
         <div>
             <label for="feedback"></label>
             <textarea id="feedback" name="feedback" placeholder="Your feedback..." rows="10" cols="38" aria-label="Enter text here" required></textarea>
-        </div>` 
+        </div>`; 
         
         
         feedbackDiv.appendChild(newForm);
@@ -119,7 +123,7 @@ function runFeedback() {
         submitButton.setAttribute('type', 'submit');
         newForm.appendChild(submitButton);
         let closeFeedback = document.createElement('button');
-        closeFeedback.setAttribute('id', 'close-feedback')
+        closeFeedback.setAttribute('id', 'close-feedback');
         closeFeedback.innerHTML = "Close";
         feedbackDiv.appendChild(closeFeedback);
         closeFeedback.setAttribute('onclick', 'hideForm()');
@@ -155,8 +159,8 @@ function addRequired() {
     let form = document.getElementById('feedback-form');
     let input = document.getElementsByTagName('input');
     let textArea = document.getElementsByTagName('textarea');
-    for (i = 0; i < input.length; i++) {
-        if (form.style.display = 'inline'){
+    for (let i = 0; i < input.length; i++) {
+        if (form.style.display == 'inline') {
         input[i].required = true;
         textArea[0].required = true;
         }
@@ -170,8 +174,8 @@ function removeRequired() {
     let form = document.getElementById('feedback-form');
     let input = document.getElementsByTagName('input');
     let textArea = document.getElementsByTagName('textarea');
-    for (i = 0; i < input.length; i++) {
-        if (form.style.display = 'none') {
+    for (let i = 0; i < input.length; i++) {
+        if (form.style.display == 'none') {
             input[i].required = false;
             textArea[0].required = false;
         }
@@ -258,40 +262,40 @@ async function playAiSequence() {
         }
         if (flashing.id == 'option1') {
             playAudio();
-            flashing.style.backgroundColor = 'white'
+            flashing.style.backgroundColor = 'white';
             if (round >= 5) {
                 await sleep(350);
             } else {
                 await sleep(700);
             }
-            flashing.style.backgroundColor = 'yellow'
+            flashing.style.backgroundColor = 'yellow';
         } else if (flashing.id == 'option2') {
             playAudio();
-            flashing.style.backgroundColor = 'white'
+            flashing.style.backgroundColor = 'white';
             if (round >= 5) {
                 await sleep(350);
             } else {
                 await sleep(700);
             }
-            flashing.style.backgroundColor = 'blue'
+            flashing.style.backgroundColor = 'blue';
         } else if (flashing.id == 'option3') {
             playAudio();
-            flashing.style.backgroundColor = 'white'
+            flashing.style.backgroundColor = 'white';
             if (round >= 5) {
                 await sleep(350);
             } else {
                 await sleep(700);
             }
-            flashing.style.backgroundColor = 'green'
+            flashing.style.backgroundColor = 'green';
         } else if (flashing.id == 'option4') {
             playAudio();
-            flashing.style.backgroundColor = 'white'
+            flashing.style.backgroundColor = 'white';
             if (round >= 5) {
                 await sleep(350);
             } else {
                 await sleep(700);
             }
-            flashing.style.backgroundColor = 'red'
+            flashing.style.backgroundColor = 'red';
         }
     }    
     userRoundToClick = true;
@@ -328,9 +332,9 @@ async function userRound(event) {
             userRoundToClick = false; // Prevents user from clicking while flashing
             giveAlistener();
             userSequence.push(this.id);
-            this.style.backgroundColor = 'white'
+            this.style.backgroundColor = 'white';
             await sleep(350);
-            this.style.backgroundColor = 'yellow'
+            this.style.backgroundColor = 'yellow';
             userRoundToClick = true; // Allows user to click again 
             giveAlistener();
         } else if (this.id == 'option2') {
@@ -338,9 +342,9 @@ async function userRound(event) {
             userRoundToClick = false;
             giveAlistener();
             userSequence.push(this.id);
-            this.style.backgroundColor = 'white'
+            this.style.backgroundColor = 'white';
             await sleep(350);
-            this.style.backgroundColor = 'blue'
+            this.style.backgroundColor = 'blue';
             userRoundToClick = true;
             giveAlistener();
         } else if (this.id == 'option3') {
@@ -348,9 +352,9 @@ async function userRound(event) {
             userRoundToClick = false;
             giveAlistener();
             userSequence.push(this.id);
-            this.style.backgroundColor = 'white'
+            this.style.backgroundColor = 'white';
             await sleep(350);
-            this.style.backgroundColor = 'green'
+            this.style.backgroundColor = 'green';
             userRoundToClick = true;
             giveAlistener();
         }else if (this.id == 'option4') {
@@ -358,9 +362,9 @@ async function userRound(event) {
             userRoundToClick = false;
             giveAlistener();
             userSequence.push(this.id);
-            this.style.backgroundColor = 'white'
+            this.style.backgroundColor = 'white';
             await sleep(350);
-            this.style.backgroundColor = 'red'
+            this.style.backgroundColor = 'red';
             userRoundToClick = true;
             giveAlistener();
         }
@@ -423,7 +427,7 @@ function winGame() {
 
     let restartButton = document.createElement('button');
     restartButton.setAttribute('id', 'restart-button');
-    restartButton.innerHTML = "Restart game"
+    restartButton.innerHTML = "Restart game";
     restartButton.addEventListener('click', reloadPage);
     winAlert.appendChild(restartButton);
 
@@ -434,12 +438,25 @@ function winGame() {
 }
 
 /**
+ * mute the sound
+ */
+function muteSound() {
+    let muteIcon = document.getElementById('mute-icon');
+    
+    if (audioMute == true) {
+        audioMute = false;
+        muteIcon.setAttribute('class', 'fas fa-volume-mute');
+    } else {
+        audioMute = true;
+        muteIcon.setAttribute('class', 'fas fa-volume-up');
+    }
+}
+
+/**
  * plays a sound effect 
  */
 function playAudio() {
-    let checkBox = document.getElementById('checkbox');
-    
-    if (checkBox.checked == true) {
+    if (!audioMute) {
         // Do nothing 
     } else {
         let audio = document.getElementById('sound-effect');
@@ -456,8 +473,7 @@ function playAudio() {
  * Plays sounds for wrong answers
  */
 function wrongAnswerAudio() {
-    let checkBox = document.getElementById('checkbox');
-    if (checkBox.checked == true) {
+    if (!audioMute) {
         // Do nothing 
     } else {
     let audio3 = document.getElementById('sound-effect3');
@@ -469,12 +485,12 @@ function wrongAnswerAudio() {
  * Restart the game by Setting parameters to default state
  */
 function restartGame() {
-    aiSequence = []
+    aiSequence = [];
     round = 0;
     displayRound();
     let play = document.getElementById('play');
     play.innerHTML = 'Play';
-    play.setAttribute('onclick', 'runGame()')
+    play.setAttribute('onclick', 'runGame()');
     userRoundToClick = false;
     started = false;
 }

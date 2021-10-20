@@ -163,8 +163,7 @@ h1 {
 
 /* Game area */
 #board-area {
-    padding: 6 0;
-}
+    padding: 6px 0px;
 }
 
 /* make responsive for wider screens */
@@ -193,7 +192,7 @@ h1 {
     }
     /* Controls area */
     #control-area{
-        margin-top: 35;
+        margin-top: 35px;
     }
 
     .control-buttons {
@@ -208,7 +207,7 @@ h1 {
     }
 
     #board-area {
-        padding: 37 0;
+        padding: 37px 0px;
     }
 
     /* Rounds area */
@@ -223,12 +222,7 @@ h1 {
     }
     /* Checkbox area */
     #mute-icon {
-        font-size: 35;
-     }
-     #checkbox {
-         margin: 0;
-         width: 25;
-         height: 25;
+        font-size: 35px;
      }
 }
 
@@ -259,7 +253,7 @@ h1 {
     }
     /* Game area */
     #board-area {
-        padding: 37 0;
+        padding: 37px 0;
     }
         
     /* Rounds area */
@@ -275,13 +269,7 @@ h1 {
 
     /* checkbox area */
     #mute-icon {
-        font-size: 25;
-     }
-
-    #checkbox {
-         margin: 0;
-         width: 20;
-         height: 20;
+        font-size: 25px;
      }
 }
 
@@ -378,19 +366,13 @@ h1 {
         padding: 20px 0;
     }
     .board-button {
-        width : 220;
-        height: 220;
+        width : 220px;
+        height: 220px;
     }
     
      /* Checkbox area */
     #mute-icon {
-        font-size: 30;
-     }
-
-    #checkbox {
-         margin: 0;
-         width: 25;
-         height: 25;
+        font-size: 30px;
      }
 
      #mute {
@@ -419,7 +401,7 @@ h1 {
         form textarea {
         width: 300px;
     }
-    
+
     /* feedback form and instructions submit and close buttons*/
     form button, #close-feedback, #close-instructions {
         font-size: 19px;
@@ -439,7 +421,4 @@ h1 {
         display: none;
     }
 }
-  
-
-  
-    
+}
