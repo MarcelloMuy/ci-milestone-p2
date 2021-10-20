@@ -176,7 +176,7 @@ h1 {
     }
     /* Controls area */
     #control-area{
-        margin-top: 35
+        margin-top: 35;
     }
 
     .control-buttons {
@@ -206,7 +206,7 @@ h1 {
     }
     /* Checkbox area */
     #mute-icon {
-        font-size: 35
+        font-size: 35;
      }
      #checkbox {
          margin: 0;
@@ -258,7 +258,7 @@ h1 {
 
     /* checkbox area */
     #mute-icon {
-        font-size: 25
+        font-size: 25;
      }
 
     #checkbox {
@@ -306,7 +306,7 @@ h1 {
 /* Make responsive for laptops */
 @media (min-width: 1200px) and (max-width: 1500px)  {
     #game-container {
-        width: 50%
+        width: 50%;
     }
     .logo {
         margin-top: 0;
@@ -343,12 +343,12 @@ h1 {
     }
     .board-button {
         width : 220;
-        height: 220
+        height: 220;
     }
     
      /* checkbox area */
     #mute-icon {
-        font-size: 30
+        font-size: 30;
      }
 
     #checkbox {
@@ -362,9 +362,15 @@ h1 {
 }
 } 
 /* Media queries for very large screens */
-@media (min-width: 1500px) and (max-width: 1700px)  {
+@media (min-width: 1500px) {
+    p {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    } 
+
     #game-container {
-        width: 50%
+        width: 50%;
     }
     /* control buttons */
     .control-buttons {
