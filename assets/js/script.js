@@ -383,7 +383,7 @@ async function userRound(event) {
 async function checkAnswer(currentRound) {
     if (aiSequence[currentRound] === userSequence[currentRound]) {
         if (userSequence.length === aiSequence.length) {
-            if (round == 10) {
+            if (round == 1) {
                 winGame();
             } else {
                 setTimeout(function() {

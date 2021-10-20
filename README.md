@@ -54,8 +54,33 @@
   
   Two fonts were used for this design. 'Press Start 2p'  for logo and Montserrat for the other elements, Sans Serif was used as a backup font in both cases.
 
+ <a name="wireframes"></a>
+## 1.3 Site Skeleton
+  [Go to the top](#table-of-contents)
 
+  [balsamiq](https://balsamiq.com/) was used to create the wireframes for the website.
 
-
-
+  The website consists in only one page with the content of buttons generated using JavaScript.
   
+  The mobile version wireframes are presented below.
+
+  <a name="game-screen"></a>
+### Game Screen:
+  ![Mobile Version](./assets/images/wireframe-game-screen.png)
+
+  <a name="instruction-screen"></a>
+### Instructions Screen:
+  ![Mobile Version](./assets/images/wireframe-instructions-screen.png)
+
+  <a name="feedback-screen"></a>
+### Feedback Screen:
+  ![Mobile Version](./assets/images/wireframe-feedback-screen.png)
+
+  The website consists in only one page with the content of buttons generated using JavaScript.
+  The only difference between the mobile and desktop versions is that on desktop a container is added around game and a gif image added as a background. The game, buttons and content are displayed in the same format as de mobile version.
+  
+  The desktop version wireframe is presented below.
+  
+  <a name="desktop-game-screen"></a>
+### Desktop Game Screen:
+  ![Mobile Version](./assets/images/wireframe-desktop-screen.png)
