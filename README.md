@@ -46,11 +46,13 @@
   * Be able to check which round am I.
   * Be able to navigate the game without reloading the page.
   * A game that increases the speed after few rounds.
+  * An option to play with no sound.
 
  <a name="typography"></a>
 ## 1.2 Typography
   [Go to the top](#table-of-contents)
-
+  
+  Two fonts were used for this design. 'Press Start 2p'  for logo and Montserrat for other elements, Sans Serif was used as backup font in both cases.
 
 
 
