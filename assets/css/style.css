@@ -25,11 +25,15 @@ h2 {
 }
 
 button {
+    border-radius: 0.2em;
+    padding: 0.45em 0.9em;
+    margin: 0.3em;
     font-weight: 700;
+    font-family: 'Montserrat', 'sans serif';
 }
 
 /* feedback form */
-form div, button {
+form div {
     margin: 0.3em;
 }
 
@@ -39,11 +43,6 @@ form div, button {
     margin-top: 1em;
 }
 .control-buttons {
-    border-radius: 0.2em;
-    padding: 0.45em 0.9em;
-    margin: 0.3em;
-    font-weight: 700;
-    font-family: 'Montserrat', 'sans serif';
     font-size: 15px;
     width: 160px;
 }

@@ -50,7 +50,7 @@ function runInstructions() {
         <p>Simon will duplicate these first two patterns and add one.</p>
         <p>After the 4th round Simon will automatically speed up.</p>
         <p>Finish 10 rounds to win the game</p>
-        <p>If wrong pattern is selected the game board will flash red, an alert sound is played, and game parameters are set to default</p>
+        <p>If the wrong pattern is selected the game board will flash red, an alert sound is played, and game parameters are set to default</p>
         <p>You can restart the game at any time by pressing the restart button</p>
         ` 
         
