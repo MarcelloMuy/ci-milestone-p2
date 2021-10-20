@@ -204,6 +204,7 @@ h1 {
     .board-button {
         width: 245px;
         height: 245px;
+        border: black solid 5px;
     }
 
     #board-area {
