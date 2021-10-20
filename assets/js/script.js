@@ -91,15 +91,18 @@ function runFeedback() {
             <h2 aria-label="Form Heading">Give Your Feedback</h2>
         </div>
         <div>
-            <label for="fname">First Name:</label>
+            <label for="fname">First Name:</label> 
+            <br>
             <input id="fname" name="fname" type="text" placeholder="Enter first name" aria-label="Enter first name" required>
         </div>
         <div>
             <label for="lname">Last Name:</label>
+            <br>
             <input id="lname" name="lname" type="text" placeholder="Enter last name" aria-label="Enter last name" required>
         </div>
         <div>
             <label for="email">Email Adress:</label>
+            <br>
             <input type="email" id="email" name="email_address" placeholder="Enter e-mail" aria-label="Enter e-mail" required>       
         </div>
         <div>

@@ -30,13 +30,31 @@ button {
     margin: 0.3em;
     font-weight: 700;
     font-family: 'Montserrat', 'sans serif';
+    font-size: 13px;
+}
+
+/* feedback form and instructions submit and close buttons */
+form button, #close-feedback, #close-instructions {
+    font-size: 11px;
 }
 
 /* feedback form */
+form input {
+    width: 200px;
+}
+
+form textarea {
+    width: 200px;
+}
+
+form {
+    font-weight: 700;
+    font-family: 'Montserrat', 'sans serif';
+}
+
 form div {
     margin: 0.3em;
 }
-
 
 /* control area */
 #control-area {
@@ -156,7 +174,7 @@ h1 {
         background: url('https://raw.githubusercontent.com/MarcelloMuy/ci-milestone-p2/master/assets/images/gif-image.gif') center;
         background-size: cover;
     }
-
+    /* Game Container */
     #game-container {
         background-color: white;
         height: 100%;
@@ -269,6 +287,7 @@ h1 {
 
 /* Make responsive for larger mobile phones with different height */
 @media (min-height: 660px) and (max-height: 700px)  {
+    /* Logo */
     .logo {
         margin-top: 0;
         padding-top: 18px;
@@ -304,13 +323,31 @@ h1 {
 
 /* Make responsive for laptops */
 @media (min-width: 1200px) and (max-width: 1500px)  {
+    /* Game container */
     #game-container {
         width: 50%;
     }
+
+    /* logo */
     .logo {
         margin-top: 0;
         padding-top: 18px;
     }
+
+    /* feedback form */
+    form input {
+    width: 300px;
+    }
+
+    form textarea {
+    width: 300px;
+}
+
+    /* feedback form and instructions submit and close buttons */
+    form button, #close-feedback, #close-instructions {
+    font-size: 15px;
+}
+
     /* Controls area  */
     #instructions-div {
         margin-top: 0;
@@ -345,7 +382,7 @@ h1 {
         height: 220;
     }
     
-     /* checkbox area */
+     /* Checkbox area */
     #mute-icon {
         font-size: 30;
      }
@@ -362,15 +399,32 @@ h1 {
 } 
 /* Media queries for very large screens */
 @media (min-width: 1500px) {
+    /* All paragraphs */
     p {
         margin-left: auto;
         margin-right: auto;
         width: 70%;
     } 
 
+    /* Game Container */
     #game-container {
         width: 50%;
     }
+
+    /* feedback form */
+    form input {
+        width: 300px;
+        }
+    
+        form textarea {
+        width: 300px;
+    }
+    
+    /* feedback form and instructions submit and close buttons*/
+    form button, #close-feedback, #close-instructions {
+        font-size: 19px;
+    }
+
     /* control buttons */
     .control-buttons {
         font-size: 29px;
