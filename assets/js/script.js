@@ -250,6 +250,9 @@ async function playAiSequence() {
             await sleep(700);
         }
         let flashing = document.getElementById(aiSequence[i]);
+        if (flashing == null) {
+            continue;
+        }
         if (flashing.id == 'option1') {
             playAudio();
             flashing.style.backgroundColor = 'white'
@@ -277,7 +280,7 @@ async function playAiSequence() {
                 await sleep(700);
             }
             flashing.style.backgroundColor = 'green'
-        }else if (flashing.id == 'option4') {
+        } else if (flashing.id == 'option4') {
             playAudio();
             flashing.style.backgroundColor = 'white'
             if (round >= 5) {
@@ -287,7 +290,7 @@ async function playAiSequence() {
             }
             flashing.style.backgroundColor = 'red'
         }
-    }
+    }    
     userRoundToClick = true;
     giveAlistener();
  } 
