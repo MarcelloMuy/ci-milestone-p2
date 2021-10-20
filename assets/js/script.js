@@ -54,9 +54,10 @@ function runInstructions() {
         <p>Simon will duplicate the first pattern and add one. Repeat these two patterns by pressing the same colours in order.</p>
         <p>Simon will duplicate these first two patterns and add one.</p>
         <p>After the 4th round Simon will automatically speed up.</p>
-        <p>Finish 10 rounds to win the game</p>
-        <p>If the wrong pattern is selected the game board will flash red, an alert sound is played, and game parameters are set to default</p>
-        <p>You can restart the game at any time by pressing the restart button</p>`; 
+        <p>Finish 10 rounds to win the game.</p>
+        <p>If the wrong pattern is selected the game board will flash red, an alert sound is played, and game parameters are set to default.</p>
+        <p>You can restart the game at any time by pressing the restart button.</p>
+        <p>If you want to play with no sound just click the volume icon.</p>`; 
         
         instructionsDiv.appendChild(newP);
         closeInstructions.setAttribute('id', 'close-instructions');
