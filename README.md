@@ -60,7 +60,7 @@
 
   [balsamiq](https://balsamiq.com/) was used to create the wireframes for the website.
 
-  The website consists in only one page with the content of buttons generated using JavaScript.
+  The website consists of only one page with the content of buttons generated using JavaScript.
   
   The mobile version wireframes are presented below.
 
@@ -76,8 +76,8 @@
 ### Feedback Screen:
   ![Mobile Version](./assets/images/wireframe-feedback-screen.png)
 
-  The website consists in only one page with the content of buttons generated using JavaScript.
-  The only difference between the mobile and desktop versions is that on desktop a container is added around game and a gif image added as a background. The game, buttons and content are displayed in the same format as de mobile version.
+  The website consists of only one page with the content of buttons generated using JavaScript.
+  The only difference between the mobile and desktop versions is that on desktop a container is added around the game and a gif image is added as a background. The game, buttons and content are displayed in the same format as the mobile version.
   
   The desktop version wireframe is presented below.
   
@@ -91,9 +91,9 @@
   
   <a name="game-screen-ui"></a>
 ## Game screen:
-  - The logo is placed on the top centre of the page. In small screens the two words are displayed in different lines and displayed on the same line for larger screens.
+  - The logo is placed in the top centre of the page. On small screens the two words are displayed in different lines and on larger screens they are displayed on the same line.
   - Under the logo there is an instructions button, a feedback button, and a play button.
-  - The three buttons are placed on the centre of the page and each one in a different line. All three buttons have the same style properties to keep the page consistency.
+  - The three buttons are placed in the centre of the page and each one on a different line. All three buttons have the same style properties to keep the page consistent.
 
 ### Mobile:
   ![Game screen preview mobile](./assets/images/game-screen-mobile.png)
@@ -104,9 +104,9 @@
 ### Instructions button:
   ![Instructions button preview](./assets/images/instructions-gif.gif)
 
-  - The instructions button when clicked generates paragraphs containing the instructions of the game and a close button. It will also hide itself from the page displaying only the content. 
+  - When clicked, the instructions button generates paragraphs containing the instructions of the game and a close button. It will also hide itself from the page displaying only the content. 
   - The paragraphs were created using template literals.
-  - The close button has the same styling of the other buttons of the page, but it is smaller. When clicked the close button will hide all the content including itself and will unhide the instructions button. 
+  - The close button has the same styling of the other buttons of the page, but it is smaller. When clicked, the close button will hide all the content including itself and will unhide the instructions button. 
   - If the instructions button is clicked a second time it will skip the process of generating new content and unhide the content already created.
 
 ### Feedback button:
@@ -115,27 +115,27 @@
   - The feedback button works in a similar way as the instructions button but will generate a form instead of paragraphs.
   - The form has three inputs, first name, last name and email and a text area for the feedback.
   - All the inputs have the required attribute on, a place holder, labels, and aria-labels.
-  - Under the text area there are two buttons one for submit and one for close. The close button works the same way as the instructions close button hiding and unhiding the content. 
+  - Under the text area there are two buttons - one for submit and one for close. The close button works the same way as the instructions close button hiding and unhiding the content. 
   - The submit button will submit the form and the code institute form dump is displayed.
 
 ### Play button:
   ![Play button preview](./assets/images/play-gif.gif)
 
-  - The third button is the play button. When clicked it will start the game and change itself into a restart button.
+  - The third button is the play button. When clicked it will start the game and will also change itself into a restart button.
   - When the restart button is clicked it sets the game parameters to default and turns itself back into the play button. 
-  - The game then is ready to be played again.
+  - The game is then ready to be played again.
 
 
 ### Rounds counter and mute icon:
-  ![Rounds counter and mute preview](./assets/images/)
+  ![Rounds counter and mute preview](./assets/images/rounds-counter-and-mute-icon-gif.gif)
 
-  - Under the buttons we have the rounds counter which keeps track of which game round is being played. 
+  - Under the buttons we have the rounds counter which keeps track of which round in the game is being played. 
   - It is justified aligned to the page, with a margin left. 
-  - On the right side of the rounds counter we have a volume icon that works as button, muting the page when clicked and unmuting when clicked again. 
-  - The icon will change to represent the mute and unmute state. 
+  - On the right side of the rounds counter we have a volume icon that works as a button, muting the page when clicked and unmuting when clicked again. 
+  - The icon will change to represent the mute and unmuted state. 
   - The page starts with the audio option set to on.
 
-At the bottom of the page, we can find the game board. The game board consist in a black box with four clickable panels of different colours. Each panel was styled creating a circle
+
 
 
 
