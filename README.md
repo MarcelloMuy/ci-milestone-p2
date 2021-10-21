@@ -135,6 +135,215 @@
   - The icon will change to represent the mute and unmuted state. 
   - The page starts with the audio option set to on.
 
+### Gameplay:
+  #### Wrong Pattern
+  ![Gameplay preview](./assets/images/gameplay-wrong-pattern-gif.gif)
+
+  #### Speed up
+  ![Gameplay preview](./assets/images/gameplay-speed-up-gif.gif)
+
+  #### Winning message
+  ![Gameplay preview](./assets/images/winning-game-gif.gif)
+
+  - At the bottom of the page, we can find the game board. 
+  - The game board consists of a black box with four clickable panels of different colours.
+  - Each panel was styled to create a full circle.
+  - When the sequence is played the panel will flash white and a sound is played.
+  - When the user interacts with the panel it will also flash white, and a different sound is played.
+  - The user is only able to click the panels when the game is on, and the sequence has finished.
+  - The game will automatically speed up after the round 4.
+  - If the user clicks a wrong pattern the black board will flash red and a different sound to indicate wrong pattern is played.
+  - The game parameters will be set to default and the game is ready to be played again.
+  - If the user completes the round 10 a winning message is displayed with a restart button and a winning image below.
+  - The restart button will reload the page when clicked.
+
+  <a name="technologies-used"></a>
+# 3. Technologies Used
+  [Go to the top](#table-of-contents)
+  
+  * [HTML5](https://en.wikipedia.org/wiki/HTML5) (markup language) was used for structuring and presenting content of the website.
+ 
+  * [CSS3](https://en.wikipedia.org/wiki/CSS) (Cascading Style Sheets) was used to style the content written in HTML.
+
+  * [JS](https://en.wikipedia.org/wiki/JavaScript) (JavaScript) was used to create the game functionality and make the website interactive of the game
+
+  * [Balsamiq](https://balsamiq.com/) was used to create the wireframes of the website.
+
+  * [Google Fonts](https://fonts.google.com/) was used to import font-family 'Press Start 2p' and Montserrat into style.css file
+
+  * [Font Awesome](https://fontawesome.com/) was used to import icons.
+
+  * [Chrome](https://www.google.com/intl/en_uk/chrome/) was used to debug and test the source code as well as to test site responsiveness.
+
+  * [Github](https://github.com/) was used to create the repository and to store the project's code after pushed from Git.
+
+  * [Gitpod](https://www.gitpod.io/) was used as the Code Editor for the site
+
+  * [W3C Markup](https://validator.w3.org/)  was used to validate the HTML code used in the project.
+
+  * [Jigsaw validation](https://jigsaw.w3.org/) was used to validate the CSS style used in the project.
+
+  * [JSHint](https://jshint.com/) was used to validate the JS script used in the project.
+
+  * [Giphy](https://giphy.com/) was used to find the gif image for the background of the desktop version.
+
+  * [Bandican](https://www.bandicam.com/) was used to record the game screen. 
+
+  * [Ezgif](https://ezgif.com/) was used to convert videos into gif files.
+
+  * [Ami](http://ami.responsivedesign.is/#) was used to generate a screenshot showing responsiveness in different devices. 
+
+  <a name="testing"></a>
+# 4. Testing
+  [Go to the top](#table-of-contents)
+
+## 4.1 Testing With Tools
+
+### Chrome DevTools
+  I used the developer tools to debug my code. If the game behaved in way that I didn’t expect I would check the console for errors and use the debugger to figure out what part of the code was causing it.
+
+### Responsive Tools
+  I used [Am I Responsive](http://ami.responsivedesign.is/) in conjunction with Chrome DevTools to check how the website behaved in different screen sizes.
+
+### W3C Validator Tools 
+
+ - I used [W3C Markup](https://validator.w3.org/) to check my code for any errors in the HTML pages.
+    
+    I had an error indicating that I didn’t put !DOCTYPE at the top of the HTML file. The problem was fixed by adding it to the file.
+
+    The screenshot of the validator showing no errors is below:
+
+    ![Game screen](./assets/images/game-screen-w3c.png)
+
+  - I used [Jigsaw validation](https://jigsaw.w3.org/) to check my code for any CSS errors.
+
+    Found errors for not specifying the metric unit for some numeric values. Fixed the problem by adding the metric unit after the value.
+
+    The screenshot of the validator showing no errors is below:
+
+    ![Style file](./assets/images/css-file-jigsaw.png)
+
+  - I used [JSHint](https://jshint.com/) to check my code for JavaScript errors.
+
+    Found errors for missing semicolon in parts of the code. Fixed the problem by adding it.
+    
+    Found errors for undefined variables. Fixed it by adding let before i in the if statements. 
+    
+    Found error indicating that expected a conditional expression and instead saw assignment. Fixed error by using == instead of = in if statements.
+
+    Errors for async functions and unused variables were ignored.  
+
+    The screenshot of the validator showing no errors is below:
+
+    ![Js file](./assets/images/jshint-validator.png)
+
+### Lighhouse Testing
+
+  ![Lighthouse test](./assets/images/lighthouse-testing.png)
+
+## Manual Testing 
+
+I have tested my website on Google Chrome and Firefox on different screens.
+  - Mobile (320 x 568)
+  - iPhone 6/7/8 Plus (412 x 736)
+  - iPad (768 x 1024)
+  - Laptop (1280 x 802)
+  - Desktop (1600 x 992)
+
+Please find below my testing process for all pages via mobile and web:
+
+### Text
+  - Check if the fonts were loaded and all text was displayed in the correct size in different screen sizes. Pass
+
+### Responsive
+  - All elements were responsive using different break points. Pass.
+
+### Images
+  - Check if all images were loaded, weren’t distorted and were responsive for different break points. Pass.
+
+### Instruction button
+  - Button creates paragraphs with game instructions and hides itself when clicked. Pass.
+  - Button creates a close button when clicked. Pass.
+  - Close button hides the paragraphs and itself when clicked. Pass.
+  - Instructions button display the same paragraphs when clicked for the second time, not generating new ones. Pass.
+
+### Feedback button
+  - Button creates a form and hides itself when clicked. Pass.
+  - Button creates a submit and a close button when clicked. Pass.
+  - Submit button only submits the form if required attributes are filled. Pass.
+  - Close button hides the form and itself when clicked. Pass.
+  - Feedback button display the same form when clicked for the second time, not generating a new one. Pass.
+
+### Play button
+  - Play button starts the game and becomes a restart button clicked. Pass.
+  - The restart button set the game parameters to default when clicked. Pass.
+
+### Rounds counter
+  - Rounds counter get increased by one at each round. Pass.
+  - Rounds counter is set to zero if the game restart. Pass.
+
+### Mute icon 
+  - Mute icon toggles between volume up and no sound icons when clicked. Pass.
+  - Mute icon mutes the sounds when clicked and unmutes it when clicked again. Pass.
+
+### Game Board
+  - Game board Flashes red and play sound if the user clicks a wrong pattern. Pass.
+  - Each panel flashes white when clicked and play a sound. Pass.
+  - The game generates a different pattern every time it is played. Pass.
+  - The pattern is increased by one at each round. Pass.
+  - The user can’t click the panels while the sequence is being played or if the game hasn’t started yet. Pass.
+
+### Winning message
+  - The game displays a winning message, creates a restart button and displays the winning image after the user completes 10 rounds. Pass.
+  - The restart button reloads the page when clicked. Pass.
+
+# 5. Bugs
+  [Go to the top](#table-of-contents)
+
+### Solved Bugs
+  - User Sequence was being filled with repeated colours making the game crash after one round. Problem fixed by setting the user array to empty at the start of the computer sequence.
+  - User was able to click the panels before the end of computer sequence. Fixed the problem by creating a Boolean to control when the user was allowed to click.
+  - If the user clicked twice while the panel was still flashing the game would jump rounds, adding extra colours to array. Fixed the problem by preventing the user to click while panel was still flashing. 
+  - When input fields with required attributes where hidden from the page the console would through a form control error. The Problem was fixed by removing required attribute when inputs where hidden and adding it back when they were unhidden.
+  - If the user clicked panels repeatedly the console would through an error of flashing = null. Problem was fixed by creating an if statement saying if flashing equals null continue.
+
+  <a name="deployment"></a>
+# 6. Deployment
+  [Go to the top](#table-of-contents)
+
+  The project was deployed using Github. The process is described below:
+
+  - Create a new Github repository.
+  - Click on settings on the repository page.
+  - Click on pages in the Options menu.
+  - Go to the source area, select main branch and save.
+  - A link for your site project will be generated.
+  - Live link for this project [here](https://marcellomuy.github.io/ci-milestone-p2/). 
+
+  <a name="credit"></a>
+# 7. Credits
+  [Go to the top](#table-of-contents)
+
+## Media 
+  * The gif image used as background came from [Giphy](https://giphy.com/).
+  * The icons used in the project came from [Font Awesome](https://fontawesome.com).
+  * The audio files used in the project came from [Free SFX](https://freesfx.co.uk/).
+
+## Code
+  * [W3schools](https://www.w3schools.com/) was used for inspiration when trying to come up with a code to compare the player array and the computer array.
+  * I would like to thank my mentor Marcel Mulders for giving me all the support and in special for explaining to me how async functions work.
+
+
+
+ 
+
+
+
+
+
+
+
+
 
 
 
