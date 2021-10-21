@@ -130,9 +130,9 @@ function runFeedback() {
         closeFeedback.setAttribute('onclick', 'hideForm()');
         feedbackForm = true;
     } else {
-        addRequired();
         let form = document.getElementById('feedback-form');
         form.style.display = 'inline';
+        addRequired();
         let closeFeedback = document.getElementById('close-feedback');
         closeFeedback.style.display = 'inline';
         let button = document.getElementById('feedback'); 
