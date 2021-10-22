@@ -54,7 +54,7 @@
   
   Two fonts were used for this design. 'Press Start 2p'  for logo and Montserrat for the other elements, Sans Serif was used as a backup font in both cases.
 
- <a name="wireframes"></a>
+ <a name="site-skeleton"></a>
 ## 1.3 Site Skeleton
   [Go to the top](#table-of-contents)
 
@@ -296,7 +296,8 @@ Please find below my testing process for all pages via mobile and web:
 ### Winning message
   - The game displays a winning message, creates a restart button and displays the winning image after the user completes 10 rounds. Pass.
   - The restart button reloads the page when clicked. Pass.
-
+  
+  <a name="bugs"></a>
 # 5. Bugs
   [Go to the top](#table-of-contents)
 
@@ -321,7 +322,7 @@ Please find below my testing process for all pages via mobile and web:
   - Live link for this project [here](https://marcellomuy.github.io/ci-milestone-p2/). 
 
   <a name="credit"></a>
-# 7. Credits
+# 7. Credit
   [Go to the top](#table-of-contents)
 
 ## Media 
