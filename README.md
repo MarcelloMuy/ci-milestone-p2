@@ -151,10 +151,10 @@
   - When the sequence is played the panel will flash white and a sound is played.
   - When the user interacts with the panel it will also flash white, and a different sound is played.
   - The user is only able to click the panels when the game is on, and the sequence has finished.
-  - The game will automatically speed up after the round 4.
-  - If the user clicks a wrong pattern the black board will flash red and a different sound to indicate wrong pattern is played.
-  - The game parameters will be set to default and the game is ready to be played again.
-  - If the user completes the round 10 a winning message is displayed with a restart button and a winning image below.
+  - The game will automatically speed up after round 4.
+  - If the user clicks a wrong pattern the black board will flash red and a different sound to indicate a wrong pattern is played.
+  - If a wrong pattern is entered, the game parameters will be set to default and the game is ready to be played again.
+  - If the user completes the 10 rounds a winning message is displayed with a restart button and a winning image below.
   - The restart button will reload the page when clicked.
 
   <a name="technologies-used"></a>
@@ -165,7 +165,7 @@
  
   * [CSS3](https://en.wikipedia.org/wiki/CSS) (Cascading Style Sheets) was used to style the content written in HTML.
 
-  * [JS](https://en.wikipedia.org/wiki/JavaScript) (JavaScript) was used to create the game functionality and make the website interactive of the game
+  * [JS](https://en.wikipedia.org/wiki/JavaScript) (JavaScript) was used to create the game functionality and make the website of the game interactive
 
   * [Balsamiq](https://balsamiq.com/) was used to create the wireframes of the website.
 
@@ -179,7 +179,7 @@
 
   * [Gitpod](https://www.gitpod.io/) was used as the Code Editor for the site
 
-  * [W3C Markup](https://validator.w3.org/)  was used to validate the HTML code used in the project.
+  * [W3C Markup](https://validator.w3.org/) was used to validate the HTML code used in the project.
 
   * [Jigsaw validation](https://jigsaw.w3.org/) was used to validate the CSS style used in the project.
 
@@ -227,7 +227,7 @@
 
     Found errors for missing semicolon in parts of the code. Fixed the problem by adding it.
     
-    Found errors for undefined variables. Fixed it by adding let before i in the if statements. 
+    Found errors for undefined variables. Fixed it by adding 'let' before 'i' in the if statements. 
     
     Found error indicating that expected a conditional expression and instead saw assignment. Fixed error by using == instead of = in if statements.
 
@@ -276,19 +276,19 @@ Please find below my testing process for all pages via mobile and web:
 
 ### Play button
   - Play button starts the game and becomes a restart button clicked. Pass.
-  - The restart button set the game parameters to default when clicked. Pass.
+  - The restart button sets the game parameters to default when clicked. Pass.
 
 ### Rounds counter
   - Rounds counter get increased by one at each round. Pass.
-  - Rounds counter is set to zero if the game restart. Pass.
+  - Rounds counter is set to zero if the game restarted. Pass.
 
 ### Mute icon 
   - Mute icon toggles between volume up and no sound icons when clicked. Pass.
   - Mute icon mutes the sounds when clicked and unmutes it when clicked again. Pass.
 
 ### Game Board
-  - Game board Flashes red and play sound if the user clicks a wrong pattern. Pass.
-  - Each panel flashes white when clicked and play a sound. Pass.
+  - Game board Flashes red and plays sound if the user clicks a wrong pattern. Pass.
+  - Each panel flashes white when clicked and plays a sound. Pass.
   - The game generates a different pattern every time it is played. Pass.
   - The pattern is increased by one at each round. Pass.
   - The user can’t click the panels while the sequence is being played or if the game hasn’t started yet. Pass.
@@ -304,9 +304,9 @@ Please find below my testing process for all pages via mobile and web:
 ### Solved Bugs
   - User Sequence was being filled with repeated colours making the game crash after one round. Problem fixed by setting the user array to empty at the start of the computer sequence.
   - User was able to click the panels before the end of computer sequence. Fixed the problem by creating a Boolean to control when the user was allowed to click.
-  - If the user clicked twice while the panel was still flashing the game would jump rounds, adding extra colours to array. Fixed the problem by preventing the user to click while panel was still flashing. 
-  - When input fields with required attributes where hidden from the page the console would through a form control error. The Problem was fixed by removing required attribute when inputs where hidden and adding it back when they were unhidden.
-  - If the user clicked panels repeatedly the console would through an error of flashing = null. Problem was fixed by creating an if statement saying if flashing equals null continue.
+  - If the user clicked twice while the panel was still flashing the game would jump rounds, adding extra colours to the array. Fixed the problem by preventing the user clicking while panel was still flashing. 
+  - When input fields with required attributes where hidden from the page the console would throw a "form control error". The Problem was fixed by removing required attribute when inputs where hidden and adding it back when they were unhidden.
+  - If the user clicked panels repeatedly the console would throw "object not found flashing = null" error. Problem was fixed by creating an 'if' statement saying if flashing equals null continue.
 
   <a name="deployment"></a>
 # 6. Deployment
@@ -332,7 +332,7 @@ Please find below my testing process for all pages via mobile and web:
 
 ## Code
   * [W3schools](https://www.w3schools.com/) was used for inspiration when trying to come up with a code to compare the player array and the computer array.
-  * I would like to thank my mentor Marcel Mulders for giving me all the support and in special for explaining to me how async functions work.
+  * I would like to thank my mentor Marcel Mulders for supporting me, and especially for explaining how async functions work.
 
 
 
