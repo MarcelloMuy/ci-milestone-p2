@@ -7,7 +7,7 @@
   If the user succeeds, the series becomes progressively longer and more complex. 
   The game is over if the user fails to repeat the correct pattern or if the user complete 10 rounds, winning the game.
 
-  A live version of the game can be found [here](https://marcellomuy.github.io/ci-milestone-p2/).
+  A live version of the game can be found [here](https://marcellomuy.github.io/ci-ms2-simon-game/).
 
   ![website preview](assets/images/responsive-snip.png)
 
